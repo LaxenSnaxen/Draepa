@@ -1,0 +1,32 @@
+# Compiled binaries
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vscode/
+.vs/
+.idea/
+
+# Build outputs
+Build/
+*.exe
+*.dll
+*.lib
+*.app
+*.dylib
+*.so
+
+# Project-specific
+*.xcodeproj
+*.sln
+
+# Ignore Unreal user settings
+*.log
+*.vsconfig
+*.suo
+*.user
+*.userprefs
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
