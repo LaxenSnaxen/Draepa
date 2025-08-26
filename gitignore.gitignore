@@ -21,9 +21,24 @@
 *.sln.docstates
 # CPP Cache Files
 *.VC.db
+*.VC.opendb
+*.VC.db-shm
+*.VC.db-wal
 *.opendb
 *.opensdf
 *.sdf
+*_BuildData.uasset
+*_Autosaves/
+*_Backup/
+*.obj
+*.pdb
+*.exe
+*.dll
+*.app
+*.ipa
+*.dylib
+*.lib
+*.a
 # Solution Files
 *.sln
 # VSCode Cache Directory
@@ -35,3 +50,15 @@
 # Miscellaneous Generated Files #
 #################################
 # ADD AS NEED BE
+# Don’t commit debug symbols or generated content
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.log
+*.pch
+*.bsc
+.vscode/
+.idea/
+*.iml
+.vs/
