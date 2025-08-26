@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\maxim\\Documents\\Unreal Projects\\Draepa\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6314D723-AC82-37AA-9280-21F36D817195}|Intermediate\\ProjectFiles\\Draepa.vcxproj|C:\\Users\\maxim\\Documents\\Unreal Projects\\Draepa\\Source\\Draepa\\Test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6314D723-AC82-37AA-9280-21F36D817195}|Intermediate\\ProjectFiles\\Draepa.vcxproj|solutionrelative:Source\\Draepa\\Test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6314D723-AC82-37AA-9280-21F36D817195}|Intermediate\\ProjectFiles\\Draepa.vcxproj|C:\\Users\\maxim\\Documents\\Unreal Projects\\Draepa\\Source\\Draepa\\Test.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6314D723-AC82-37AA-9280-21F36D817195}|Intermediate\\ProjectFiles\\Draepa.vcxproj|solutionrelative:Source\\Draepa\\Test.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Test.cpp",
+              "DocumentMoniker": "C:\\Users\\maxim\\Documents\\Unreal Projects\\Draepa\\Source\\Draepa\\Test.cpp",
+              "RelativeDocumentMoniker": "Source\\Draepa\\Test.cpp",
+              "ToolTip": "C:\\Users\\maxim\\Documents\\Unreal Projects\\Draepa\\Source\\Draepa\\Test.cpp",
+              "RelativeToolTip": "Source\\Draepa\\Test.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-24T11:24:41.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Test.h",
+              "DocumentMoniker": "C:\\Users\\maxim\\Documents\\Unreal Projects\\Draepa\\Source\\Draepa\\Test.h",
+              "RelativeDocumentMoniker": "Source\\Draepa\\Test.h",
+              "ToolTip": "C:\\Users\\maxim\\Documents\\Unreal Projects\\Draepa\\Source\\Draepa\\Test.h",
+              "RelativeToolTip": "Source\\Draepa\\Test.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-24T11:24:40.448Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

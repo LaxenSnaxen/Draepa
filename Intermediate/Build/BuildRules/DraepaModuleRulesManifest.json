@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\maxim\\Documents\\Unreal Projects\\Draepa\\Source\\Draepa\\Draepa.Build.cs",
+		"C:\\Users\\maxim\\Documents\\Unreal Projects\\Draepa\\Source\\Draepa.Target.cs",
+		"C:\\Users\\maxim\\Documents\\Unreal Projects\\Draepa\\Source\\DraepaEditor.Target.cs"
+	],
+	"EngineVersion": "5.6.1"
+}

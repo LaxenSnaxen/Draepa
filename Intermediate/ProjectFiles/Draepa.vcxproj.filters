@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Draepa.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Draepa.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\DraepaEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\gitignore.gitignore" />
+    <None Include="..\..\gitignore.gitignore.txt" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Draepa">
+      <UniqueIdentifier>{2221FD2F-6723-31A2-9E8C-DC37B7411BDB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Draepa\Draepa.Build.cs">
+      <Filter>Source\Draepa</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Draepa\Draepa.cpp">
+      <Filter>Source\Draepa</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Draepa\Draepa.h">
+      <Filter>Source\Draepa</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Draepa\Test.cpp">
+      <Filter>Source\Draepa</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Draepa\Test.h">
+      <Filter>Source\Draepa</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

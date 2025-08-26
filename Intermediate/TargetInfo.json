@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Draepa",
+			"Path": "..\\Source\\Draepa.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "DraepaEditor",
+			"Path": "..\\Source\\DraepaEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+# Ignore build artifacts and temporary files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.VC.db
+*.suo
+*.opensdf
+*.sdf
+*.ipch
+*.aps
+*.ncb
+*.user
+*.sln.docstates
+
+# Ignore other OS or IDE-specific files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Optional: Ignore plugin binaries
+Plugins/*/Binaries/
+Plugins/*/Intermediate/

@@ -1,0 +1,786 @@
+﻿Log file open, 08/24/25 18:30:03
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogProfilingDebugging: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogWindows: Started CrashReportClient (pid=20136)
+LogWindows: Custom abort handler registered for crash reporting.
+LogInit: Display: Running engine for game: Draepa
+LogCore: UTS: Unreal Trace Server launched successfully
+LogTrace: Initializing trace...
+LogCore: Display: Requested channels: 'cpu,gpu,frame,log,bookmark,screenshot,region'
+LogTrace: Display: Control listening on port 39106
+LogTrace: Finished trace initialization.
+LogCsvProfiler: Display: Metadata set : platform="Windows"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.6-CL-44394996"
+LogCsvProfiler: Display: Metadata set : engineversion="5.6.1-44394996+++UE5+Release-5.6"
+LogCsvProfiler: Display: Metadata set : os="Windows 11 (23H2) [10.0.22631.5768] "
+LogCsvProfiler: Display: Metadata set : cpu="GenuineIntel|11th Gen Intel(R) Core(TM) i7-11700KF @ 3.60GHz"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : pgoprofilingenabled="0"
+LogCsvProfiler: Display: Metadata set : ltoenabled="0"
+LogCsvProfiler: Display: Metadata set : asan="0"
+LogCsvProfiler: Display: Metadata set : commandline="" "C:/Users/maxim/Documents/Unreal Projects/Draepa/Draepa.uproject"""
+LogCsvProfiler: Display: Metadata set : loginid="0692505049b40428ba3720b948c563f2"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogStats: Stats thread started at 0.267835
+LogCsvProfiler: Display: Metadata set : systemresolution.resx="1280"
+LogCsvProfiler: Display: Metadata set : systemresolution.resy="720"
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +1:00, Platform Override: ''
+LogInit: Session CrashGUID >====================================================
+         Session CrashGUID >   UECC-Windows-6FD9C20A4B5642C904AA25A991B1640B
+         Session CrashGUID >====================================================
+LogConfig: No local boot hotfix file found at: [../../../../../../Users/maxim/Documents/Unreal Projects/Draepa/Saved/PersistentDownloadDir/HotfixForNextBoot.txt]
+LogAudio: Display: Pre-Initializing Audio Device Manager...
+LogAudio: Display: AudioInfo: 'OPUS' Registered
+LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+LogAudio: Display: AudioInfo: 'OGG' Registered
+LogAudio: Display: AudioInfo: 'ADPCM' Registered
+LogAudio: Display: AudioInfo: 'PCM' Registered
+LogAudio: Display: AudioInfo: 'BINKA' Registered
+LogAudio: Display: AudioInfo: 'RADA' Registered
+LogAudio: Display: Audio Device Manager Pre-Initialized
+LogPluginManager: Looking for build plugins target receipt
+LogPluginManager: Unable to find target receipt in path: ../../../../../../Users/maxim/Documents/Unreal Projects/Draepa/Binaries/Win64/*.target
+LogConfig: Display: Loading Android ini files took 0.06 seconds
+LogConfig: Display: Loading IOS ini files took 0.06 seconds
+LogConfig: Display: Loading Mac ini files took 0.06 seconds
+LogConfig: Display: Loading VulkanPC ini files took 0.06 seconds
+LogAssetRegistry: Display: Asset registry cache read as 69.7 MiB from ../../../../../../Users/maxim/Documents/Unreal Projects/Draepa/Intermediate/CachedAssetRegistry_0.bin.
+LogConfig: Display: Loading Windows ini files took 0.07 seconds
+LogConfig: Display: Loading VisionOS ini files took 0.07 seconds
+LogConfig: Display: Loading Unix ini files took 0.07 seconds
+LogConfig: Display: Loading TVOS ini files took 0.07 seconds
+LogConfig: Display: Loading Linux ini files took 0.08 seconds
+LogPluginManager: Found matching target receipt: ../../../Engine/Binaries/Win64/UnrealEditor.target
+LogPluginManager: Looking for enabled plugins target receipt
+LogPluginManager: Unable to find target receipt in path: ../../../../../../Users/maxim/Documents/Unreal Projects/Draepa/Binaries/Win64/*.target
+LogPluginManager: Found matching target receipt: ../../../Engine/Binaries/Win64/UnrealEditor.target
+LogPluginManager: Mounting Engine plugin Bridge
+LogPluginManager: Mounting Engine plugin ChaosCloth
+LogPluginManager: Mounting Engine plugin ChaosInsights
+LogPluginManager: Mounting Engine plugin ChaosVD
+LogPluginManager: Mounting Engine plugin CmdLinkServer
+LogPluginManager: Mounting Engine plugin EnhancedInput
+LogPluginManager: Mounting Engine plugin Fab
+LogPluginManager: Mounting Engine plugin FastBuildController
+LogPluginManager: Mounting Engine plugin IoStoreInsights
+LogPluginManager: Mounting Engine plugin MassInsights
+LogPluginManager: Mounting Engine plugin MeshPainting
+LogPluginManager: Mounting Engine plugin RenderGraphInsights
+LogPluginManager: Mounting Engine plugin TraceUtilities
+LogPluginManager: Mounting Engine plugin UbaController
+LogPluginManager: Mounting Engine plugin WorldMetrics
+LogPluginManager: Mounting Engine plugin XGEController
+LogPluginManager: Mounting Engine plugin AssetManagerEditor
+LogPluginManager: Mounting Engine plugin BlueprintHeaderView
+LogPluginManager: Mounting Engine plugin ChangelistReview
+LogPluginManager: Mounting Engine plugin CryptoKeys
+LogPluginManager: Mounting Engine plugin ColorGrading
+LogPluginManager: Mounting Engine plugin CurveEditorTools
+LogPluginManager: Mounting Engine plugin DataValidation
+LogPluginManager: Mounting Engine plugin EditorScriptingUtilities
+LogPluginManager: Mounting Engine plugin EditorDebugTools
+LogPluginManager: Mounting Engine plugin EngineAssetDefinitions
+LogPluginManager: Mounting Engine plugin FacialAnimation
+LogPluginManager: Mounting Engine plugin GameplayTagsEditor
+LogPluginManager: Mounting Engine plugin GeometryMode
+LogPluginManager: Mounting Engine plugin MacGraphicsSwitching
+LogPluginManager: Mounting Engine plugin MaterialAnalyzer
+LogPluginManager: Mounting Engine plugin MeshLODToolset
+LogPluginManager: Mounting Engine plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting Engine plugin ModelingToolsEditorMode
+LogPluginManager: Mounting Engine plugin PluginBrowser
+LogPluginManager: Mounting Engine plugin ProxyLODPlugin
+LogPluginManager: Mounting Engine plugin SequencerAnimTools
+LogPluginManager: Mounting Engine plugin SpeedTreeImporter
+LogPluginManager: Mounting Engine plugin UMGWidgetPreview
+LogPluginManager: Mounting Engine plugin UVEditor
+LogPluginManager: Mounting Engine plugin WorldPartitionHLODUtilities
+LogPluginManager: Mounting Engine plugin StylusInput
+LogPluginManager: Mounting Engine plugin AdvancedRenamer
+LogPluginManager: Mounting Engine plugin AutomationUtils
+LogPluginManager: Mounting Engine plugin BackChannel
+LogPluginManager: Mounting Engine plugin ChaosCaching
+LogPluginManager: Mounting Engine plugin ChaosEditor
+LogPluginManager: Mounting Engine plugin ChaosNiagara
+LogPluginManager: Mounting Engine plugin ChaosSolverPlugin
+LogPluginManager: Mounting Engine plugin ChaosUserDataPT
+LogPluginManager: Mounting Engine plugin CharacterAI
+LogPluginManager: Mounting Engine plugin Dataflow
+LogPluginManager: Mounting Engine plugin EditorDataStorage
+LogPluginManager: Mounting Engine plugin EditorPerformance
+LogPluginManager: Mounting Engine plugin EditorTelemetry
+LogPluginManager: Mounting Engine plugin EditorDataStorageFeatures
+LogPluginManager: Mounting Engine plugin FullBodyIK
+LogPluginManager: Mounting Engine plugin Fracture
+LogPluginManager: Mounting Engine plugin GeometryCollectionPlugin
+LogPluginManager: Mounting Engine plugin GeometryDataflow
+LogPluginManager: Mounting Engine plugin GeometryFlow
+LogPluginManager: Mounting Engine plugin LevelSequenceNavigatorBridge
+LogPluginManager: Mounting Engine plugin LowLevelNetTrace
+LogPluginManager: Mounting Engine plugin LocalizableMessage
+LogPluginManager: Mounting Engine plugin MeshModelingToolsetExp
+LogPluginManager: Mounting Engine plugin NFORDenoise
+LogPluginManager: Mounting Engine plugin PlatformCrypto
+LogPluginManager: Mounting Engine plugin PlanarCut
+LogPluginManager: Mounting Engine plugin PythonScriptPlugin
+LogPluginManager: Mounting Engine plugin RuntimeTelemetry
+LogPluginManager: Mounting Engine plugin SequenceNavigator
+LogPluginManager: Mounting Engine plugin SkeletalReduction
+LogPluginManager: Mounting Engine plugin ToolPresets
+LogPluginManager: Mounting Engine plugin TcpMessaging
+LogPluginManager: Mounting Engine plugin NNEDenoiser
+LogPluginManager: Mounting Engine plugin NNERuntimeORT
+LogPluginManager: Mounting Engine plugin UdpMessaging
+LogPluginManager: Mounting Engine plugin ActorLayerUtilities
+LogPluginManager: Mounting Engine plugin LauncherChunkInstaller
+LogPluginManager: Mounting Engine plugin AndroidFileServer
+LogPluginManager: Mounting Engine plugin AndroidMoviePlayer
+LogPluginManager: Mounting Engine plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin AndroidPermission
+LogPluginManager: Mounting Engine plugin AppleImageUtils
+LogPluginManager: Mounting Engine plugin AppleMoviePlayer
+LogPluginManager: Mounting Engine plugin ArchVisCharacter
+LogPluginManager: Mounting Engine plugin AssetTags
+LogPluginManager: Mounting Engine plugin AudioCapture
+LogPluginManager: Mounting Engine plugin AudioSynesthesia
+LogPluginManager: Mounting Engine plugin AudioWidgets
+LogPluginManager: Mounting Engine plugin ChunkDownloader
+LogPluginManager: Mounting Engine plugin CableComponent
+LogPluginManager: Mounting Engine plugin ComputeFramework
+LogPluginManager: Mounting Engine plugin CustomMeshComponent
+LogPluginManager: Mounting Engine plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin GeometryProcessing
+LogPluginManager: Mounting Engine plugin GeometryCache
+LogPluginManager: Mounting Engine plugin GoogleCloudMessaging
+LogPluginManager: Mounting Engine plugin GooglePAD
+LogPluginManager: Mounting Engine plugin HairStrands
+LogPluginManager: Mounting Engine plugin InputDebugging
+LogPluginManager: Mounting Engine plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin LocationServicesBPLibrary
+LogPluginManager: Mounting Engine plugin MeshModelingToolset
+LogPluginManager: Mounting Engine plugin Metasound
+LogPluginManager: Mounting Engine plugin MobilePatchingUtils
+LogPluginManager: Mounting Engine plugin MsQuic
+LogPluginManager: Mounting Engine plugin PropertyAccessEditor
+LogPluginManager: Mounting Engine plugin ProceduralMeshComponent
+LogPluginManager: Mounting Engine plugin ResonanceAudio
+LogPluginManager: Mounting Engine plugin RigVM
+LogPluginManager: Mounting Engine plugin PropertyBindingUtils
+LogPluginManager: Mounting Engine plugin SignificanceManager
+LogPluginManager: Mounting Engine plugin SoundFields
+LogPluginManager: Mounting Engine plugin StateTree
+LogPluginManager: Mounting Engine plugin Synthesis
+LogPluginManager: Mounting Engine plugin WaveTable
+LogPluginManager: Mounting Engine plugin WebMMoviePlayer
+LogPluginManager: Mounting Engine plugin WindowsMoviePlayer
+LogPluginManager: Mounting Engine plugin WindowsDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin ActorSequence
+LogPluginManager: Mounting Engine plugin TemplateSequence
+LogPluginManager: Mounting Engine plugin SequencerScripting
+LogPluginManager: Mounting Engine plugin LevelSequenceEditor
+LogPluginManager: Mounting Engine plugin InterchangeTests
+LogPluginManager: Mounting Engine plugin EnvironmentQueryEditor
+LogPluginManager: Mounting Engine plugin AISupport
+LogPluginManager: Mounting Engine plugin Paper2D
+LogPluginManager: Mounting Engine plugin ACLPlugin
+LogPluginManager: Mounting Engine plugin AnimationModifierLibrary
+LogPluginManager: Mounting Engine plugin AnimationData
+LogPluginManager: Mounting Engine plugin BlendSpaceMotionAnalysis
+LogPluginManager: Mounting Engine plugin ControlRigSpline
+LogPluginManager: Mounting Engine plugin ControlRigModules
+LogPluginManager: Mounting Engine plugin ControlRig
+LogPluginManager: Mounting Engine plugin DeformerGraph
+LogPluginManager: Mounting Engine plugin GameplayInsights
+LogPluginManager: Mounting Engine plugin IKRig
+LogPluginManager: Mounting Engine plugin RigLogic
+LogPluginManager: Mounting Engine plugin TweeningUtils
+LogPluginManager: Mounting Engine plugin CameraShakePreviewer
+LogPluginManager: Mounting Engine plugin SkeletalMeshModelingTools
+LogPluginManager: Mounting Engine plugin EngineCameras
+LogPluginManager: Mounting Engine plugin GameplayCameras
+LogPluginManager: Mounting Engine plugin AnimationSharing
+LogPluginManager: Mounting Engine plugin CLionSourceCodeAccess
+LogPluginManager: Mounting Engine plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting Engine plugin OodleNetwork
+LogPluginManager: Mounting Engine plugin DumpGPUServices
+LogPluginManager: Mounting Engine plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting Engine plugin N10XSourceCodeAccess
+LogPluginManager: Mounting Engine plugin PlasticSourceControl
+LogPluginManager: Mounting Engine plugin GitSourceControl
+LogPluginManager: Mounting Engine plugin NullSourceCodeAccess
+LogPluginManager: Mounting Engine plugin PixWinPlugin
+LogPluginManager: Mounting Engine plugin NamingTokens
+LogPluginManager: Mounting Engine plugin PerforceSourceControl
+LogPluginManager: Mounting Engine plugin PluginUtils
+LogPluginManager: Mounting Engine plugin PropertyAccessNode
+LogPluginManager: Mounting Engine plugin ProjectLauncher
+LogPluginManager: Mounting Engine plugin RenderDocPlugin
+LogPluginManager: Mounting Engine plugin SubversionSourceControl
+LogPluginManager: Mounting Engine plugin RiderSourceCodeAccess
+LogPluginManager: Mounting Engine plugin UObjectPlugin
+LogPluginManager: Mounting Engine plugin TextureFormatOodle
+LogPluginManager: Mounting Engine plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting Engine plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting Engine plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting Engine plugin DatasmithContent
+LogPluginManager: Mounting Engine plugin GLTFExporter
+LogPluginManager: Mounting Engine plugin VariantManager
+LogPluginManager: Mounting Engine plugin Cascade
+LogPluginManager: Mounting Engine plugin VariantManagerContent
+LogPluginManager: Mounting Engine plugin Niagara
+LogPluginManager: Mounting Engine plugin NiagaraSimCaching
+LogPluginManager: Mounting Engine plugin AlembicImporter
+LogPluginManager: Mounting Engine plugin InterchangeEditor
+LogPluginManager: Mounting Engine plugin InterchangeAssets
+LogPluginManager: Mounting Engine plugin Interchange
+LogPluginManager: Mounting Engine plugin AndroidMedia
+LogPluginManager: Mounting Engine plugin AvfMedia
+LogPluginManager: Mounting Engine plugin MediaCompositing
+LogPluginManager: Mounting Engine plugin ImgMedia
+LogPluginManager: Mounting Engine plugin MediaPlayerEditor
+LogPluginManager: Mounting Engine plugin MediaPlate
+LogPluginManager: Mounting Engine plugin WmfMedia
+LogPluginManager: Mounting Engine plugin WebMMedia
+LogPluginManager: Mounting Engine plugin MetaHumanSDK
+LogPluginManager: Mounting Engine plugin EOSShared
+LogPluginManager: Mounting Engine plugin OnlineBase
+LogPluginManager: Mounting Engine plugin OnlineServices
+LogPluginManager: Mounting Engine plugin OnlineSubsystem
+LogPluginManager: Mounting Engine plugin OnlineSubsystemNull
+LogPluginManager: Mounting Engine plugin OnlineSubsystemUtils
+LogPluginManager: Mounting Engine plugin CameraCalibrationCore
+LogPluginManager: Mounting Engine plugin Takes
+LogPluginManager: Mounting Engine plugin ContentBrowserClassDataSource
+LogPluginManager: Mounting Engine plugin ContentBrowserAssetDataSource
+LogPluginManager: Mounting Engine plugin ContentBrowserFileDataSource
+LogPluginManager: Mounting Engine plugin LightMixer
+LogPluginManager: Mounting Engine plugin ObjectMixer
+LogPluginManager: Mounting Engine plugin PortableObjectFileDataSource
+LogPluginManager: Mounting Engine plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting Engine plugin BaseCharacterFXEditor
+LogPluginManager: Mounting Engine plugin XInputDevice
+LogPluginManager: Mounting Engine plugin OnlineSubsystemIOS
+LogPluginManager: Mounting Engine plugin CompositeCore
+SourceControl: Revision control is disabled
+SourceControl: Revision control is disabled
+SourceControl: Revision control is disabled
+LogInit: Warning: Incompatible or missing module: Draepa
+Running C:/Program Files/Epic Games/UE_5.6/Engine/Build/BatchFiles/Build.bat Development Win64 -Project="C:/Users/maxim/Documents/Unreal Projects/Draepa/Draepa.uproject" -TargetType=Editor -Progress -NoEngineChanges -NoHotReloadFromIDE
+Using bundled DotNet SDK version: 8.0.300 win-x64
+Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" Development Win64 -Project="C:/Users/maxim/Documents/Unreal Projects/Draepa/Draepa.uproject" -TargetType=Editor -Progress -NoEngineChanges -NoHotReloadFromIDE
+Log file: C:\Users\maxim\AppData\Local\UnrealBuildTool\Log.txt
+Using 'git status' to determine working set for adaptive non-unity build (C:\Users\maxim\Documents\Unreal Projects\Draepa).
+@progress push 5%
+@progress pop
+Building DraepaEditor...
+Using Visual Studio 2022 14.38.33145 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[Upgrade]
+[Upgrade] Using backward-compatible include order. The latest version of UE has changed the order of includes, which may require code changes. The current setting is:
+[Upgrade]     IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_3
+[Upgrade] Suppress this message by setting 'IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_6;' in DraepaEditor.Target.cs.
+[Upgrade] Alternatively you can set this to 'EngineIncludeOrderVersion.Latest' to always use the latest include order. This will potentially cause compile errors when integrating new versions of the engine.
+[Upgrade]
+[Adaptive Build] Excluded from Draepa unity file: Draepa.init.gen.cpp, VoronoiTerrainActor.gen.cpp
+Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
+  Executing up to 8 processes, one per physical core
+Using Unreal Build Accelerator local executor to run 11 action(s)
+  Storage capacity 40Gb
+---- Starting trace: 250824_183006 ----
+UbaServer - Listening on 0.0.0.0:1345
+------ Building 11 action(s) started ------
+[1/11] Resource Default.rc2
+[2/11] Compile [x64] SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_3.cpp
+[3/11] Compile [x64] VoronoiTerrainActor.gen.cpp
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(9,23): error C2079: 'AVoronoiTerrainActor' uses undefined class 'YOURPROJECT_API'
+class YOURPROJECT_API AVoronoiTerrainActor : public AActor
+                      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(9,44): error C2143: syntax error: missing ';' before ':'
+class YOURPROJECT_API AVoronoiTerrainActor : public AActor
+                                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(9,46): error C2059: syntax error: 'public'
+class YOURPROJECT_API AVoronoiTerrainActor : public AActor
+                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(10,1): error C2143: syntax error: missing ';' before '{'
+{
+^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(10,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(23,28): error C2027: use of undefined type 'AVoronoiTerrainActor'
+void AVoronoiTerrainActor::StaticRegisterNativesAVoronoiTerrainActor()
+                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(27,31): error C2027: use of undefined type 'AVoronoiTerrainActor'
+UClass* AVoronoiTerrainActor::GetPrivateStaticClass()
+                              ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(29,17): error C2061: syntax error: identifier 'AVoronoiTerrainActor'
+	using TClass = AVoronoiTerrainActor;
+	               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(33,4): error C3861: 'StaticPackage': identifier not found
+			StaticPackage(),
+			^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(37,11): error C2065: 'TClass': undeclared identifier
+			sizeof(TClass),
+			       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(38,12): error C2061: syntax error: identifier 'TClass'
+			alignof(TClass),
+			        ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(39,4): error C2653: 'TClass': is not a class or namespace name
+			TClass::StaticClassFlags,
+			^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(40,4): error C2653: 'TClass': is not a class or namespace name
+			TClass::StaticClassCastFlags(),
+			^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(41,4): error C2653: 'TClass': is not a class or namespace name
+			TClass::StaticConfigName(),
+			^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(42,54): error C2065: 'TClass': undeclared identifier
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			                                                  ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(43,76): error C2065: 'TClass': undeclared identifier
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			                                                                        ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(44,4): error C2653: 'TClass': is not a class or namespace name
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(45,5): error C2653: 'TClass': is not a class or namespace name
+			&TClass::Super::StaticClass,
+			 ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(46,5): error C2653: 'TClass': is not a class or namespace name
+			&TClass::WithinClass::StaticClass
+			 ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(53,31): error C2027: use of undefined type 'AVoronoiTerrainActor'
+	return AVoronoiTerrainActor::GetPrivateStaticClass();
+	                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(193,3): error C2923: 'TCppClassTypeTraits': 'AVoronoiTerrainActor' is not a valid template type argument for parameter 'CPPCLASS'
+		TCppClassTypeTraits<AVoronoiTerrainActor>::IsAbstract,
+		^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(9,23): note: see declaration of 'AVoronoiTerrainActor'
+class YOURPROJECT_API AVoronoiTerrainActor : public AActor
+                      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(193,46): error C2955: 'TCppClassTypeTraits': use of class template requires template argument list
+		TCppClassTypeTraits<AVoronoiTerrainActor>::IsAbstract,
+		                                           ^
+C:\Program Files\Epic Games\UE_5.6\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(2867,1): note: see declaration of 'TCppClassTypeTraits'
+struct TCppClassTypeTraits : public FCppClassTypeTraitsBase
+^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(193,46): error C2397: conversion from 'TCppClassTypeTraits<CPPCLASS>::<unnamed-enum-IsAbstract>' to 'bool' requires a narrowing conversion
+		TCppClassTypeTraits<AVoronoiTerrainActor>::IsAbstract,
+		                                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(193,46): error C4800: Implicit conversion from 'TCppClassTypeTraits<CPPCLASS>::<unnamed-enum-IsAbstract>' to bool. Possible information loss
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(193,46): note: consider using explicit cast or comparison to 0 to avoid this warning
+C:\Program Files\Epic Games\UE_5.6\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(2870,2): note: see declaration of 'TCppClassTypeTraits<CPPCLASS>::<unnamed-enum-IsAbstract>'
+	{
+	^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(193,46): warning C4305: 'initializing': truncation from 'TCppClassTypeTraits<CPPCLASS>::<unnamed-enum-IsAbstract>' to 'bool'
+		TCppClassTypeTraits<AVoronoiTerrainActor>::IsAbstract,
+		                                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(197,274): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x00200800000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, Mesh), Z_Construct_UClass_UProceduralMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Mesh_MetaData), NewProp_Mesh_MetaData) };
+                                                                                                                                                                                                                                                                                 ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(197,97): error C2737: 'NewProp_Mesh': const object must be initialized
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x00200800000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, Mesh), Z_Construct_UClass_UProceduralMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Mesh_MetaData), NewProp_Mesh_MetaData) };
+                                                                                                ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(198,278): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_NumQuadsX = { "NumQuadsX", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, NumQuadsX), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NumQuadsX_MetaData), NewProp_NumQuadsX_MetaData) };
+                                                                                                                                                                                                                                                                                     ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(198,94): error C2737: 'NewProp_NumQuadsX': const object must be initialized
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_NumQuadsX = { "NumQuadsX", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, NumQuadsX), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NumQuadsX_MetaData), NewProp_NumQuadsX_MetaData) };
+                                                                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(199,278): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_NumQuadsY = { "NumQuadsY", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, NumQuadsY), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NumQuadsY_MetaData), NewProp_NumQuadsY_MetaData) };
+                                                                                                                                                                                                                                                                                     ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(199,94): error C2737: 'NewProp_NumQuadsY': const object must be initialized
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_NumQuadsY = { "NumQuadsY", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, NumQuadsY), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NumQuadsY_MetaData), NewProp_NumQuadsY_MetaData) };
+                                                                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(200,280): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_QuadSize = { "QuadSize", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, QuadSize), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_QuadSize_MetaData), NewProp_QuadSize_MetaData) };
+                                                                                                                                                                                                                                                                                       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(200,96): error C2737: 'NewProp_QuadSize': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_QuadSize = { "QuadSize", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, QuadSize), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_QuadSize_MetaData), NewProp_QuadSize_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(201,282): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_Amplitude = { "Amplitude", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, Amplitude), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Amplitude_MetaData), NewProp_Amplitude_MetaData) };
+                                                                                                                                                                                                                                                                                         ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(201,96): error C2737: 'NewProp_Amplitude': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_Amplitude = { "Amplitude", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, Amplitude), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Amplitude_MetaData), NewProp_Amplitude_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(202,272): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_CellsX = { "CellsX", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, CellsX), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellsX_MetaData), NewProp_CellsX_MetaData) };
+                                                                                                                                                                                                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(202,94): error C2737: 'NewProp_CellsX': const object must be initialized
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_CellsX = { "CellsX", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, CellsX), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellsX_MetaData), NewProp_CellsX_MetaData) };
+                                                                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(203,272): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_CellsY = { "CellsY", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, CellsY), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellsY_MetaData), NewProp_CellsY_MetaData) };
+                                                                                                                                                                                                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(203,94): error C2737: 'NewProp_CellsY': const object must be initialized
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_CellsY = { "CellsY", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, CellsY), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellsY_MetaData), NewProp_CellsY_MetaData) };
+                                                                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(204,268): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_Seed = { "Seed", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, Seed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Seed_MetaData), NewProp_Seed_MetaData) };
+                                                                                                                                                                                                                                                                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(204,94): error C2737: 'NewProp_Seed': const object must be initialized
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_Seed = { "Seed", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, Seed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Seed_MetaData), NewProp_Seed_MetaData) };
+                                                                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(205,292): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_RidgeSharpness = { "RidgeSharpness", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, RidgeSharpness), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RidgeSharpness_MetaData), NewProp_RidgeSharpness_MetaData) };
+                                                                                                                                                                                                                                                                                                   ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(205,96): error C2737: 'NewProp_RidgeSharpness': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_RidgeSharpness = { "RidgeSharpness", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, RidgeSharpness), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RidgeSharpness_MetaData), NewProp_RidgeSharpness_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(208,25): error C2059: syntax error: ')'
+	((AVoronoiTerrainActor*)Obj)->bSecondOctave = 1;
+	                       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(211,298): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_SecondOctaveScale = { "SecondOctaveScale", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, SecondOctaveScale), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SecondOctaveScale_MetaData), NewProp_SecondOctaveScale_MetaData) };
+                                                                                                                                                                                                                                                                                                         ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(211,96): error C2737: 'NewProp_SecondOctaveScale': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_SecondOctaveScale = { "SecondOctaveScale", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, SecondOctaveScale), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SecondOctaveScale_MetaData), NewProp_SecondOctaveScale_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(212,300): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_SecondOctaveWeight = { "SecondOctaveWeight", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, SecondOctaveWeight), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SecondOctaveWeight_MetaData), NewProp_SecondOctaveWeight_MetaData) };
+                                                                                                                                                                                                                                                                                                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(212,96): error C2737: 'NewProp_SecondOctaveWeight': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_SecondOctaveWeight = { "SecondOctaveWeight", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, SecondOctaveWeight), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SecondOctaveWeight_MetaData), NewProp_SecondOctaveWeight_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(213,290): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_VoronoiWeight = { "VoronoiWeight", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, VoronoiWeight), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_VoronoiWeight_MetaData), NewProp_VoronoiWeight_MetaData) };
+                                                                                                                                                                                                                                                                                                 ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(213,96): error C2737: 'NewProp_VoronoiWeight': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_VoronoiWeight = { "VoronoiWeight", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, VoronoiWeight), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_VoronoiWeight_MetaData), NewProp_VoronoiWeight_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(214,288): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_PerlinWeight = { "PerlinWeight", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, PerlinWeight), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PerlinWeight_MetaData), NewProp_PerlinWeight_MetaData) };
+                                                                                                                                                                                                                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(214,96): error C2737: 'NewProp_PerlinWeight': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_PerlinWeight = { "PerlinWeight", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, PerlinWeight), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PerlinWeight_MetaData), NewProp_PerlinWeight_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(215,282): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_FbmWeight = { "FbmWeight", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, FbmWeight), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FbmWeight_MetaData), NewProp_FbmWeight_MetaData) };
+                                                                                                                                                                                                                                                                                         ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(215,96): error C2737: 'NewProp_FbmWeight': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_FbmWeight = { "FbmWeight", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, FbmWeight), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FbmWeight_MetaData), NewProp_FbmWeight_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(216,286): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_PerlinScale = { "PerlinScale", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, PerlinScale), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PerlinScale_MetaData), NewProp_PerlinScale_MetaData) };
+                                                                                                                                                                                                                                                                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(216,96): error C2737: 'NewProp_PerlinScale': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_PerlinScale = { "PerlinScale", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, PerlinScale), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PerlinScale_MetaData), NewProp_PerlinScale_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(217,280): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_FbmScale = { "FbmScale", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, FbmScale), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FbmScale_MetaData), NewProp_FbmScale_MetaData) };
+                                                                                                                                                                                                                                                                                       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(217,96): error C2737: 'NewProp_FbmScale': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_FbmScale = { "FbmScale", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, FbmScale), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FbmScale_MetaData), NewProp_FbmScale_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(218,280): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_FbmOctaves = { "FbmOctaves", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, FbmOctaves), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FbmOctaves_MetaData), NewProp_FbmOctaves_MetaData) };
+                                                                                                                                                                                                                                                                                       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(218,94): error C2737: 'NewProp_FbmOctaves': const object must be initialized
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_FbmOctaves = { "FbmOctaves", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, FbmOctaves), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FbmOctaves_MetaData), NewProp_FbmOctaves_MetaData) };
+                                                                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(219,292): error C2615: 'offsetof' cannot be applied to non-class type 'int'
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_FbmPersistence = { "FbmPersistence", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, FbmPersistence), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FbmPersistence_MetaData), NewProp_FbmPersistence_MetaData) };
+                                                                                                                                                                                                                                                                                                   ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(219,96): error C2737: 'NewProp_FbmPersistence': const object must be initialized
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::NewProp_FbmPersistence = { "FbmPersistence", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AVoronoiTerrainActor, FbmPersistence), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FbmPersistence_MetaData), NewProp_FbmPersistence_MetaData) };
+                                                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(248,25): error C2027: use of undefined type 'AVoronoiTerrainActor'
+	&AVoronoiTerrainActor::StaticClass,
+	                       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(247,88): error C2737: 'ClassParams': const object must be initialized
+const UECodeGen_Private::FClassParams Z_Construct_UClass_AVoronoiTerrainActor_Statics::ClassParams = {
+                                                                                       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(270,1): error C2027: use of undefined type 'AVoronoiTerrainActor'
+DEFINE_VTABLE_PTR_HELPER_CTOR(AVoronoiTerrainActor);
+^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(270,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+DEFINE_VTABLE_PTR_HELPER_CTOR(AVoronoiTerrainActor);
+^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(270,1): error C2550: '{ctor}': constructor initializer lists are only allowed on constructor definitions
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(270,1): error C4508: '{ctor}': function should return a value; 'void' return type assumed
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(271,24): error C2027: use of undefined type 'AVoronoiTerrainActor'
+AVoronoiTerrainActor::~AVoronoiTerrainActor() {}
+                       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(271,47): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+AVoronoiTerrainActor::~AVoronoiTerrainActor() {}
+                                              ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(271,48): error C4508: '{dtor}': function should return a value; 'void' return type assumed
+AVoronoiTerrainActor::~AVoronoiTerrainActor() {}
+                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(278,68): error C2027: use of undefined type 'AVoronoiTerrainActor'
+		{ Z_Construct_UClass_AVoronoiTerrainActor, AVoronoiTerrainActor::StaticClass, TEXT("AVoronoiTerrainActor"), &Z_Registration_Info_UClass_AVoronoiTerrainActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AVoronoiTerrainActor), 900962362U) },
+		                                                                 ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(277,62): error C2440: 'initializing': cannot convert from 'initializer list' to 'const FClassRegisterCompiledInInfo [1]'
+	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
+	                                                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.gen.cpp(277,62): note: Element '1': no conversion from 'initializer list' to 'const FClassRegisterCompiledInInfo'
+[4/11] Compile [x64] VoronoiTerrainActor.cpp
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(9,23): error C2079: 'AVoronoiTerrainActor' uses undefined class 'YOURPROJECT_API'
+class YOURPROJECT_API AVoronoiTerrainActor : public AActor
+                      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(9,44): error C2143: syntax error: missing ';' before ':'
+class YOURPROJECT_API AVoronoiTerrainActor : public AActor
+                                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(9,46): error C2059: syntax error: 'public'
+class YOURPROJECT_API AVoronoiTerrainActor : public AActor
+                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(10,1): error C2143: syntax error: missing ';' before '{'
+{
+^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.h(10,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(4,23): error C2027: use of undefined type 'AVoronoiTerrainActor'
+AVoronoiTerrainActor::AVoronoiTerrainActor()
+                      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(5,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+{
+^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(6,5): error C2065: 'PrimaryActorTick': undeclared identifier
+    PrimaryActorTick.bCanEverTick = false;
+    ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(7,5): error C2065: 'Mesh': undeclared identifier
+    Mesh = CreateDefaultSubobject<UProceduralMeshComponent>(TEXT("ProcMesh"));
+    ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(7,12): error C3861: 'CreateDefaultSubobject': identifier not found
+    Mesh = CreateDefaultSubobject<UProceduralMeshComponent>(TEXT("ProcMesh"));
+           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(8,5): error C2065: 'RootComponent': undeclared identifier
+    RootComponent = Mesh;
+    ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(8,21): error C2065: 'Mesh': undeclared identifier
+    RootComponent = Mesh;
+                    ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(9,1): error C4508: '{ctor}': function should return a value; 'void' return type assumed
+}
+^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(11,28): error C2027: use of undefined type 'AVoronoiTerrainActor'
+void AVoronoiTerrainActor::OnConstruction(const FTransform& Transform)
+                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(13,5): error C3861: 'GenerateMesh': identifier not found
+    GenerateMesh();
+    ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(16,28): error C2027: use of undefined type 'AVoronoiTerrainActor'
+void AVoronoiTerrainActor::GenerateMesh()
+                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(26,28): error C2065: 'NumQuadsY': undeclared identifier
+    for (int32 y = 0; y <= NumQuadsY; y++)
+                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(28,32): error C2065: 'NumQuadsX': undeclared identifier
+        for (int32 x = 0; x <= NumQuadsX; x++)
+                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(30,28): error C2065: 'QuadSize': undeclared identifier
+            float Px = x * QuadSize;
+                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(31,28): error C2065: 'QuadSize': undeclared identifier
+            float Py = y * QuadSize;
+                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(32,28): error C3861: 'GetHeightAt': identifier not found
+            float Height = GetHeightAt(FVector2D(Px, Py));
+                           ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(34,42): error C2065: 'NumQuadsX': undeclared identifier
+            UVs.Add(FVector2D((float)x / NumQuadsX, (float)y / NumQuadsY));
+                                         ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(34,64): error C2065: 'NumQuadsY': undeclared identifier
+            UVs.Add(FVector2D((float)x / NumQuadsX, (float)y / NumQuadsY));
+                                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(39,27): error C2065: 'NumQuadsY': undeclared identifier
+    for (int32 y = 0; y < NumQuadsY; y++)
+                          ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(41,31): error C2065: 'NumQuadsX': undeclared identifier
+        for (int32 x = 0; x < NumQuadsX; x++)
+                              ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(43,29): error C2065: 'NumQuadsX': undeclared identifier
+            int32 i0 = y * (NumQuadsX + 1) + x;
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(45,30): error C2065: 'NumQuadsX': undeclared identifier
+            int32 i2 = i0 + (NumQuadsX + 1);
+                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(60,5): error C2065: 'Mesh': undeclared identifier
+    Mesh->CreateMeshSection(0, Vertices, Triangles, Normals, UVs, VertexColors, Tangents, true);
+    ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(61,5): error C2065: 'Mesh': undeclared identifier
+    Mesh->ContainsPhysicsTriMeshData(true);
+    ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(66,29): error C2027: use of undefined type 'AVoronoiTerrainActor'
+float AVoronoiTerrainActor::GetHeightAt(const FVector2D& P) const
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(66,29): error C2270: 'GetHeightAt': modifiers not allowed on nonmember functions
+float AVoronoiTerrainActor::GetHeightAt(const FVector2D& P) const
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(69,15): error C3861: 'WorleyF1': identifier not found
+    float d = WorleyF1(P);
+              ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(70,40): error C3861: 'ComputeBaseRadius': identifier not found
+    float baseRadius = FMath::Max(1.f, ComputeBaseRadius());
+                                       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(71,78): error C2065: 'RidgeSharpness': undeclared identifier
+    float voronoi = FMath::Pow(1.f - FMath::Clamp(d / baseRadius, 0.f, 1.f), RidgeSharpness);
+                                                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(73,9): error C2065: 'bSecondOctave': undeclared identifier
+    if (bSecondOctave)
+        ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(76,20): error C3861: 'WorleyF1': identifier not found
+        float d2 = WorleyF1(OffsetP) * SecondOctaveScale;
+                   ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(76,40): error C2065: 'SecondOctaveScale': undeclared identifier
+        float d2 = WorleyF1(OffsetP) * SecondOctaveScale;
+                                       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(77,73): error C2065: 'SecondOctaveScale': undeclared identifier
+        float ridge2 = FMath::Pow(1.f - FMath::Clamp(d2 / (baseRadius * SecondOctaveScale), 0.f, 1.f), RidgeSharpness);
+                                                                        ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(77,104): error C2065: 'RidgeSharpness': undeclared identifier
+        float ridge2 = FMath::Pow(1.f - FMath::Clamp(d2 / (baseRadius * SecondOctaveScale), 0.f, 1.f), RidgeSharpness);
+                                                                                                       ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(78,42): error C2065: 'SecondOctaveWeight': undeclared identifier
+        voronoi = FMath::Clamp(voronoi + SecondOctaveWeight * ridge2, 0.f, 1.f);
+                                         ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(82,37): error C2065: 'PerlinScale': undeclared identifier
+    float perlin = PerlinNoise2D(P, PerlinScale) * 0.5f + 0.5f;
+                                    ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(82,20): error C3861: 'PerlinNoise2D': identifier not found
+    float perlin = PerlinNoise2D(P, PerlinScale) * 0.5f + 0.5f;
+                   ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(85,31): error C2065: 'FbmScale': undeclared identifier
+    float fbm = FBmNoise2D(P, FbmScale, FbmOctaves, FbmPersistence) * 0.5f + 0.5f;
+                              ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(85,41): error C2065: 'FbmOctaves': undeclared identifier
+    float fbm = FBmNoise2D(P, FbmScale, FbmOctaves, FbmPersistence) * 0.5f + 0.5f;
+                                        ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(85,53): error C2065: 'FbmPersistence': undeclared identifier
+    float fbm = FBmNoise2D(P, FbmScale, FbmOctaves, FbmPersistence) * 0.5f + 0.5f;
+                                                    ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(85,17): error C3861: 'FBmNoise2D': identifier not found
+    float fbm = FBmNoise2D(P, FbmScale, FbmOctaves, FbmPersistence) * 0.5f + 0.5f;
+                ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(88,32): error C2065: 'VoronoiWeight': undeclared identifier
+    float height01 = voronoi * VoronoiWeight + perlin * PerlinWeight + fbm * FbmWeight;
+                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(88,57): error C2065: 'PerlinWeight': undeclared identifier
+    float height01 = voronoi * VoronoiWeight + perlin * PerlinWeight + fbm * FbmWeight;
+                                                        ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(88,78): error C2065: 'FbmWeight': undeclared identifier
+    float height01 = voronoi * VoronoiWeight + perlin * PerlinWeight + fbm * FbmWeight;
+                                                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(90,23): error C2065: 'Amplitude': undeclared identifier
+    return height01 * Amplitude;
+                      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(95,29): error C2027: use of undefined type 'AVoronoiTerrainActor'
+float AVoronoiTerrainActor::PerlinNoise2D(const FVector2D& P, float Scale) const
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(95,29): error C2270: 'PerlinNoise2D': modifiers not allowed on nonmember functions
+float AVoronoiTerrainActor::PerlinNoise2D(const FVector2D& P, float Scale) const
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(100,29): error C2027: use of undefined type 'AVoronoiTerrainActor'
+float AVoronoiTerrainActor::FBmNoise2D(const FVector2D& P, float Scale, int32 Octaves, float Persistence) const
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(100,29): error C2270: 'FBmNoise2D': modifiers not allowed on nonmember functions
+float AVoronoiTerrainActor::FBmNoise2D(const FVector2D& P, float Scale, int32 Octaves, float Persistence) const
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(120,29): error C2027: use of undefined type 'AVoronoiTerrainActor'
+float AVoronoiTerrainActor::WorleyF1(const FVector2D& P) const
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(120,29): error C2270: 'WorleyF1': modifiers not allowed on nonmember functions
+float AVoronoiTerrainActor::WorleyF1(const FVector2D& P) const
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(123,34): error C2065: 'CellsX': undeclared identifier
+    FVector2D CellSize(10000.f / CellsX, 10000.f / CellsY);
+                                 ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(123,52): error C2065: 'CellsY': undeclared identifier
+    FVector2D CellSize(10000.f / CellsX, 10000.f / CellsY);
+                                                   ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(136,34): error C2065: 'Seed': undeclared identifier
+            FRandomStream Stream(Seed + nx * 73856093 ^ ny * 19349663);
+                                 ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(150,29): error C2027: use of undefined type 'AVoronoiTerrainActor'
+float AVoronoiTerrainActor::ComputeBaseRadius() const
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Intermediate\Build\Win64\UnrealEditor\Inc\Draepa\UHT\VoronoiTerrainActor.generated.h(53,7): note: see declaration of 'AVoronoiTerrainActor'
+class AVoronoiTerrainActor;
+      ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(150,29): error C2270: 'ComputeBaseRadius': modifiers not allowed on nonmember functions
+float AVoronoiTerrainActor::ComputeBaseRadius() const
+                            ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(152,48): error C2065: 'CellsX': undeclared identifier
+    return FMath::Sqrt(FMath::Square(10000.f / CellsX) + FMath::Square(10000.f / CellsY)) * 0.5f;
+                                               ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(152,31): error C2672: 'FMath::Square': no matching overloaded function found
+    return FMath::Sqrt(FMath::Square(10000.f / CellsX) + FMath::Square(10000.f / CellsY)) * 0.5f;
+                              ^
+C:\Program Files\Epic Games\UE_5.6\Engine\Source\Runtime\Core\Public\Math\UnrealMathUtility.h(578,47): note: could be 'T FMath::Square(const T)'
+	[[nodiscard]] static constexpr FORCEINLINE T Square( const T A )
+	                                             ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(152,82): error C2065: 'CellsY': undeclared identifier
+    return FMath::Sqrt(FMath::Square(10000.f / CellsX) + FMath::Square(10000.f / CellsY)) * 0.5f;
+                                                                                 ^
+C:\Users\maxim\Documents\Unreal Projects\Draepa\Source\Draepa\VoronoiTerrainActor.cpp(152,65): error C2672: 'FMath::Square': no matching overloaded function found
+    return FMath::Sqrt(FMath::Square(10000.f / CellsX) + FMath::Square(10000.f / CellsY)) * 0.5f;
+                                                                ^
+C:\Program Files\Epic Games\UE_5.6\Engine\Source\Runtime\Core\Public\Math\UnrealMathUtility.h(578,47): note: could be 'T FMath::Square(const T)'
+	[[nodiscard]] static constexpr FORCEINLINE T Square( const T A )
+	                                             ^
+[5/11] Compile [x64] Draepa.cpp
+[6/11] Compile [x64] Test.cpp
+[7/11] Compile [x64] Draepa.init.gen.cpp
+[8/11] Compile [x64] PerModuleInline.gen.cpp
+Trace written to file C:/Users/maxim/AppData/Local/UnrealBuildTool/Log.uba with size 24.6kb
+Total time in Unreal Build Accelerator local executor: 37.53 seconds
+
+Result: Failed (OtherCompilationError)
+Total execution time: 38.45 seconds
+LogInit: Warning: Still incompatible or missing module: Draepa
+LogCore: Engine exit requested (reason: EngineExit() was called)
+LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: )...
+LogAudio: Display: Audio Device Manager Shutdown
+LogExit: Preparing to exit.
+LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+LogXGEController: Cleaning working directory: C:/Users/maxim/AppData/Local/Temp/UnrealXGEWorkingDir/
+LogPakFile: Destroying PakPlatformFile
+LogExit: Exiting.
+Log file closed, 08/24/25 18:30:47
