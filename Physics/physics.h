@@ -13,7 +13,7 @@ public:
         : radius(radius), x(x), y(y), z(z), vx(0), vy(0), vz(vz), ax(0), ay(0), az(az), mass(mass), restitution(restitution), friction(friction) {}
 
     //Get för alla variabler
-    float radius() const { return radius; }
+    float getRadius() const { return radius; }
     float getPosition() const { return std::make_tuple(x, y, z); }
     float getVelocity() const { return std::make_tuple(vx, vy, vz); }
     float getAcceleration() const { return std::make_tuple(ax, ay, az); }
@@ -28,7 +28,7 @@ public:
     };
 
     void applyGravity(){
-        ay = -9.81f; // Gravity acceleration in m/s^2
+        ay -= 9.81f; // Gravity acceleration in m/s^2
     };
 
     void disableGravity(){
@@ -62,6 +62,39 @@ public:
         float kineticEnergy = 0.5f * mass * (vx * vx + vy * vy + vz * vz);
         float potentialEnergy = mass * 9.81f * y; // om y är höjden från marken annars får en variabel eller konstant läggas till för marknivån 
         return kineticEnergy + potentialEnergy;
+    };
+
+    void applyWind(float windSpeedX, float windSpeedY, float windSpeedZ) {
+        // Enkel vindpåverkan som lägger till vindhastigheten till objektets hastighet
+        // Viden ska vara mellan 100 och -100 i varje riktning
+        vx += windSpeedX / 100; // Delar med 100 för att minska effekten av vinden (kan ändras efter behov)
+        vy += windSpeedY / 100;
+        vz += windSpeedZ / 100;
+    };
+
+    int getDamage() const {
+        // Enkel skademodell baserad på hastighet och massa
+        int reductionConstant = 10; // Konstant för att justera skalan på skadan
+        damage = 0;
+        float dontDestroyTheWorldVariableForDamageCalculationIfSomethingSomehowGainsTooMuchEnergyAndWeDontKnowHowBecauseThatIsEasierThanFindingTheProblem = 500.0f; // Variabel för att undvika extrema skador
+
+        Energy = self.getTotalEnergy(); // Använder total energi som en proxy för skada
+        if (Energy > 1000) {
+            Energy = dontDestroyTheWorldVariableForDamageCalculationIfSomethingSomehowGainsTooMuchEnergyAndWeDontKnowHowBecauseThatIsEasierThanFindingTheProblem; // Begränsar skadan för att undvika extrema värden
+        };
+
+        damage = static_cast<int>(Energy / reductionConstant); // Enkel formel för skada
+
+        return damage;
+    };
+
+    void hitObject(int objectHardness) { // sakta ner ner objektet baserat på dess hårdhet
+        int damage = getDamage();
+        if (damage > objectHardness) {
+            
+        } else {
+            
+
     }
 
 private:
