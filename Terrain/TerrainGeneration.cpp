@@ -44,7 +44,7 @@ void noiseGenerator()
 }
 
 // Eftersom terrängen skall vara baserad på Värmlands klimat skall följande biomer inkluderas, även om biomerna endast har visuell funktionalitet i denna prototyp.
-// Sjö, strand, träsk, äng, barrskog, fjällskog, berg och hedar. 
+// Sjö, strand, träsk, äng, barrskog, fjällskog, berg och hedar. (Glöm inte Grums, den viktigaste biomen av dom alla, den farligaste)
 
 std::string biome(float e, float m) {
   // these thresholds will need tuning to match your generator
@@ -74,4 +74,5 @@ for (int y = 0; y < height; y++) {
            ny = y/height - 0.5;
     value[y][x] = noise(nx, ny);
   }
+
 }
