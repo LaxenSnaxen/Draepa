@@ -76,11 +76,11 @@ public:
         // Enkel skademodell baserad på hastighet och massa
         int reductionConstant = 10; // Konstant för att justera skalan på skadan
         damage = 0;
-        float dontDestroyTheWorldVariableForDamageCalculationIfSomethingSomehowGainsTooMuchEnergyAndWeDontKnowHowBecauseThatIsEasierThanFindingTheProblem = 500.0f; // Variabel för att undvika extrema skador
+        float dontDestroyTheWorldVariableForDamageCalculationIfSomethingSomehowGainsTooMuchEnergyAndWeDontKnowHowItGotThatMuchEnergyBecauseThatIsEasierThanFindingTheProblem = 500.0f; // Variabel för att undvika extrema skador
 
         Energy = self.getTotalEnergy(); // Använder total energi som en proxy för skada
         if (Energy > 1000) {
-            Energy = dontDestroyTheWorldVariableForDamageCalculationIfSomethingSomehowGainsTooMuchEnergyAndWeDontKnowHowBecauseThatIsEasierThanFindingTheProblem; // Begränsar skadan för att undvika extrema värden
+            Energy = dontDestroyTheWorldVariableForDamageCalculationIfSomethingSomehowGainsTooMuchEnergyAndWeDontKnowHowItGotThatMuchEnergyBecauseThatIsEasierThanFindingTheProblem; // Begränsar skadan för att undvika extrema värden
         };
 
         damage = static_cast<int>(Energy / reductionConstant); // Enkel formel för skada

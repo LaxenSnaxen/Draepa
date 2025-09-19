@@ -1,0 +1,8 @@
+Dreapa Story
+Intro/Tutorial
+Du vaknar upp i en fängelsecell i ett fort/slott. Det står en vakt utanför cellen som säger: ”Hey, You. You’re finally awake. You have been chosen to become a soldier to reduce your sentence and earn some money for after your release. Do you accept?”
+Choice 1 Om spelaren väljer “No”
+Det kommer att klippa till en cutscene men innan så kommer det vara en flashscreen där det står ”20 years later” sedan kommer spelaren lämna cellen och komma ut ur fängelset, men spelaren har inga pengar så det kommer att klippa till att han sitter på en gata och ber efter pengar. En dialog ruta kommer fram ”You refused the offer and served your 20 year sentence and when you got out you knew no one and had no money so you had to start begging on the street because no one would employ a criminal. After a couple of years you died with no accomplishments in your life. Bad Ending”
+Choice 2
+
+
