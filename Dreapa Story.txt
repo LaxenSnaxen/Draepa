@@ -1,8 +1,12 @@
 Dreapa Story
 Intro/Tutorial
-Du vaknar upp i en f�ngelsecell i ett fort/slott. Det st�r en vakt utanf�r cellen som s�ger: �Hey, You. You�re finally awake. You have been chosen to become a soldier to reduce your sentence and earn some money for after your release. Do you accept?�
-Choice 1 Om spelaren v�ljer �No�
-Det kommer att klippa till en cutscene men innan s� kommer det vara en flashscreen d�r det st�r �20 years later� sedan kommer spelaren l�mna cellen och komma ut ur f�ngelset, men spelaren har inga pengar s� det kommer att klippa till att han sitter p� en gata och ber efter pengar. En dialog ruta kommer fram �You refused the offer and served your 20 year sentence and when you got out you knew no one and had no money so you had to start begging on the street because no one would employ a criminal. After a couple of years you died with no accomplishments in your life. Bad Ending�
+Du vaknar upp i en fängelsecell i ett fort/slott. Det står en vakt utanför cellen som säger: ”Hey, You. You’re finally awake. You have been chosen to become a soldier to reduce your sentence and earn some money for after your release. Do you accept?”
+Choice 1 Om spelaren väljer “No”
+Det kommer att klippa till en cutscene men innan så kommer det vara en flashscreen där det står ”20 years later” sedan kommer spelaren lämna cellen och komma ut ur fängelset, men spelaren har inga pengar så det kommer att klippa till att han sitter på en gata och ber efter pengar. En dialog ruta kommer fram ”You refused the offer and served your 20 year sentence and when you got out you knew no one and had no money so you had to start begging on the street because no one would employ a criminal. After a couple of years you died with no accomplishments in your life. Bad Ending”
 Choice 2
 
 
+Tar plats under år 1030
+Du är son till Eirikr Hovhof, en rik hövding som äger marken vid Hovlanda. Hovlanda är, som namnet tyder, tempelmark. Din far är barmhärtig och har finansierat dina försök att konstruera belägringsvapen, för det vore ditt intresse. Men då templet fick besök av en kusin till hövdingen av Tingvalla trakterna så misslyckades dit belägringsvapen och du vore skickad till Tingvalla för dråp. Där skulle du bli fängslad(avrättad kanske passar bättre), om du ej gick med som Tinvgallas hövding föreslog. Han gav dig valet om att antingen dö, eller ta dina maskiner till slagfältet och försöka hjälpa honom att försvara Värmland från den kristna framryckningen. Redan i år hade Säffle fått en kristen hövding och det tyder på att resten av Värmland stod vid risk att får kristendomen påtvingad sig. Du som son till hövdingen av tempelmarker accepterade gladligen (eller inte) och byggde dina maskiner för hövdingen av Tingvalla, Ragnvald Blótmaðr.
+
+Du kommer att kämpa med dina vapen i Ragnvalds här då ni tampar mot dem norska kämparna. Men armén blir splittrad och du härjar nu ensam med dina vapen i västra värmland. Du belägrar och bekämpar samhälle efter samhälle och slutar med att du intar Säffle tillsammans med resten av armén.
