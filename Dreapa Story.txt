@@ -7,13 +7,26 @@ Choice 2
 
 
 Tar plats under år 1030
-Du är son till Eirikr Hovhof, en rik hövding som äger marken vid Hovlanda. Hovlanda är, som namnet tyder, tempelmark. Din far är barmhärtig och har finansierat dina
-försök att konstruera belägringsvapen, för det vore ditt intresse. Men då templet fick besök av en kusin till hövdingen av Tingvalla trakterna så misslyckades dit
-belägringsvapen och du vore skickad till Tingvalla för dråp. Där skulle du bli fängslad(avrättad kanske passar bättre), om du ej gick med som Tinvgallas hövding
-föreslog. Han gav dig valet om att antingen dö, eller ta dina maskiner till slagfältet och försöka hjälpa honom att försvara Värmland från den kristna framryckningen.
-Redan i år hade Säffle fått en kristen hövding och det tyder på att resten av Värmland stod vid risk att får kristendomen påtvingad sig. Du som son till hövdingen av
-tempelmarker accepterade gladligen (eller inte) och byggde dina maskiner för hövdingen av Tingvalla, Ragnvald Blótmaðr.
+Du är son till Eirikr Hovhof, en rik hövding som äger marken vid Hovlanda på Hammarö. Hovlanda är, som namnet tyder, tempelmark. Din far är barmhärtig och har
+finansierat dina försök att konstruera belägringsvapen, för det vore ditt intresse. Men då templet fick besök av en kusin till hövdingen av Tingvalla trakterna så
+misslyckades dit belägringsvapen och du vore skickad till Tingvalla för dråp. Där skulle du bli fängslad(avrättad kanske passar bättre), om du ej gick med som
+Tinvgallas hövding föreslog. Han gav dig valet om att antingen dö, eller ta dina maskiner till slagfältet och försöka hjälpa honom att försvara Värmland från den
+kristna framryckningen. Redan i år hade Säffle fått en kristen hövding och det tyder på att resten av Värmland stod vid risk att får kristendomen påtvingad sig. Du som
+son till hövdingen av tempelmarker accepterade gladligen (eller inte) och byggde dina maskiner för hövdingen av Tingvalla, Ragnvald Blótmaðr.
 
 Du kommer att kämpa med dina vapen i Ragnvalds här då ni tampar mot dem norska kämparna. Men armén blir splittrad och du härjar nu ensam med dina vapen i västra
 värmland. Du belägrar och bekämpar samhälle efter samhälle och slutar med att du intar Säffle tillsammans med resten av armén.
+
+Nio uppdrag.
+1. ROAD OF NINTEY: Förinta en mindre här du finner i början av spelet.
+2. THE SPLIT PINE: Du tillintegör ett läger med snabbt byggda pallisader längst sjö foxen.
+3. CROSSING OF EIDSKOGEN: Du attackerar en norsk utpost vid korsväg samhället Eidskogen.
+4. Echose of the Hof: Du återvänder till Hovlanda för att samla resurser. Du möter en kristen styrka på vägen.
+5. THE IRON MIRE: Inta en järnbrytande by som ligger i ett träsk.
+6. NIGHT OVER GLAVA: Natt attack på borg Glava vid Glasfjorden.
+7. WALLS OF ED: Inta Ed, en viktig gränsstad.
+8. RIVER OF ASH: Förhinda kristna förstärkningar från att korsa byälven, norr om Nysäter.
+9. SIEGE OF SÄFFLE: Du tillsammans med armén belägrar och intar Säffle.
+
+För varje uppdrag bör du kunna uppgradera ditt belägringsvapen.
 
