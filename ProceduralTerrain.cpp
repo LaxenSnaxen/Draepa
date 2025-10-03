@@ -48,7 +48,7 @@ void AProceduralTerrain::GenerateTerrain()
             FVector2D Pos(X - TerrainWidth / 2, Y - TerrainHeight / 2);
             if (FVector2D::Distance(Pos, CoreCenter) < CoreRadius)
             {
-                E = 0.6f; // plateau in center
+                E = 0.5f; // plateau in center
             }
 
             // Moisture & temperature
@@ -64,7 +64,7 @@ void AProceduralTerrain::GenerateTerrain()
 
             if (Biome == "OCEAN") Color = FColor::Blue;                     // BLÅ
             else if (Biome == "BEACH") Color = FColor::Yellow;              // GUL
-            else if (Biome == "SWAMP") Color = FColor(0, 100, 0);           // MÖRK GRÖN
+            else if (Biome == "SWAMP") Color = FColor(255, 140, 0);           // ORANGE
             else if (Biome == "PLAINS") Color = FColor::Green;              // LJUS GRÖN
             else if (Biome == "FOREST") Color = FColor(34, 139, 34);        // MÖRK GRÖN
             else if (Biome == "TAIGA") Color = FColor(0, 128, 128);         // TURKOS
@@ -84,19 +84,19 @@ FString AProceduralTerrain::GetBiome(float Elevation, float Moisture, float Temp
     if (Elevation > WaterLevel && Elevation < WaterLevel * 1.1f) return "BEACH";
 
     // Wet lowlands
-    if (Moisture > 0.7f && Elevation < 0.3f) return "SWAMP";
+    if (Moisture > 0.7f && Elevation < 0.4f) return "SWAMP";
 
     // Grasslands / meadows
-    if (Elevation < 0.4f && Moisture > 0.4f) return "PLAINS";
+    if (Elevation < 0.5f && Moisture > 0.4f) return "PLAINS";
 
     // Forests
     if (Elevation < 0.6f && Moisture > 0.5f && Temperature > 0.4f) return "FOREST";
 
     // Taiga / boreal forest (colder, wetter mid-elevations)
-    if (Elevation < 0.7f && Moisture > 0.5f && Temperature <= 0.4f) return "TAIGA";
+    if (Elevation < 0.75f && Moisture > 0.5f && Temperature <= 0.4f) return "TAIGA";
 
     // Mountains
-    if (Elevation >= 0.7f && Elevation < 0.85f) return "MOUNTAIN";
+    if (Elevation >= 0.9f && Elevation < 0.85f) return "MOUNTAIN";
 
     // High cold plateau
     if (Elevation >= 0.85f && Temperature < 0.5f) return "TUNDRA";
