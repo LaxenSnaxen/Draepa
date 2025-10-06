@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
@@ -52,5 +52,93 @@ private:
 
     void GenerateTerrain();
 
+    FString GetBiome(float Elevation, float Moisture, float Temperature);
+};
+*/
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "FastNoiseLite.h"
+#include "ProceduralTerrain.generated.h"
+
+USTRUCT()
+struct FChunkData
+{
+    GENERATED_BODY()
+
+    FVector2D ChunkCoord;
+    TArray<uint8> RawData; // could be height values or biome indices
+};
+
+UCLASS()
+class DRAEPA_API AProceduralTerrain : public AActor
+{
+    GENERATED_BODY()
+    
+public:	
+    AProceduralTerrain();
+
+protected:
+    virtual void BeginPlay() override;
+
+public:	
+    virtual void Tick(float DeltaTime) override;
+
+    UPROPERTY(EditAnywhere, Category = "Terrain|Chunks")
+    int32 ChunkSizeMeters = 1000;  // 1 km per chunk
+
+    UPROPERTY(EditAnywhere, Category = "Terrain|Chunks")
+    int32 PointsPerChunk = 64;     // debug resolution per chunk
+
+    UPROPERTY(EditAnywhere, Category = "Terrain|World")
+    int32 WorldSizeChunks = 5;     // 5x5 chunks total
+
+    UPROPERTY(EditAnywhere, Category = "Terrain|Streaming")
+    float LoadDistance = 2500.0f;  // meters, tuneable
+
+    UPROPERTY(EditAnywhere, Category = "Terrain|Streaming")
+    FString ChunkSaveFolder = TEXT("Saved/Chunks");
+
+    // === Terrain parameters ===
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain")
+    int32 TerrainWidth = 128;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain")
+    int32 TerrainHeight = 128;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain")
+    float Frequency = 0.02f;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain")
+    float Exponent = 1.0f;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain")
+    float FudgeFactor = 1.2f;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain")
+    float WaterLevel = 0.4f;
+
+    // Core area that must remain the same across levels
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain")
+    FVector2D CoreCenter = FVector2D(0, 0);
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain")
+    float CoreRadius = 50.0f;
+
+private:
+    FastNoiseLite ElevationNoise;
+    FastNoiseLite MoistureNoise;
+    FastNoiseLite TemperatureNoise;
+
+    TSet<FVector2D> LoadedChunks;
+
+    void UpdateLoadedChunks();
+    void LoadOrGenerateChunk(const FVector2D& ChunkCoord);
+    void GenerateChunk(const FVector2D& ChunkCoord);
+    void SaveChunkToDisk(const FVector2D& ChunkCoord, const TArray<uint8>& Data);
+    bool LoadChunkFromDisk(const FVector2D& ChunkCoord, TArray<uint8>& OutData);
+
+    FString GetChunkFilename(const FVector2D& ChunkCoord) const;
     FString GetBiome(float Elevation, float Moisture, float Temperature);
 };
