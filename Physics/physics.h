@@ -4,19 +4,15 @@
 #include <vector>
 #include <algorithm>
 
-class physicalSphericalObject {
-
+class physicalObject {
 public:
+    physicalObject(float x, float y, float z, float mass, float bounce = 0.5f, float friction = 0.5f)
+        : x(x), y(y), z(z), vx(0), vy(0), vz(0), ax(0), ay(0), az(0), mass(mass), bounce(bounce), friction(friction) {}
     
-
-    physicalObject(float radius, float x, float y, float z, float mass, float bounce = 0.5f, float friction = 0.5f)
-        : radius(radius), x(x), y(y), z(z), vx(0), vy(0), vz(vz), ax(0), ay(0), az(az), mass(mass), restitution(restitution), friction(friction) {}
-
     //Get för alla variabler
-    float getRadius() const { return radius; }
-    float getPosition() const { return std::make_tuple(x, y, z); }
-    float getVelocity() const { return std::make_tuple(vx, vy, vz); }
-    float getAcceleration() const { return std::make_tuple(ax, ay, az); }
+    std::tuple<float,float,float> getPosition() const { return std::make_tuple(x, y, z); }
+    std::tuple<float,float,float> getVelocity() const { return std::make_tuple(vx, vy, vz); }
+    std::tuple<float,float,float> getAcceleration() const { return std::make_tuple(ax, ay, az); }
     float getMass() const { return mass; }
     float getBounce() const { return bounce; }
     float getFriction() const { return friction; }
@@ -51,15 +47,10 @@ public:
         x += vx * deltaTime;
         y += vy * deltaTime;
         z += vz * deltaTime;
-
-        // reseta acceleration efter ny tick
-        ax = 0;
-        ay = 0;
-        az = 0;
     };
 
     float getTotalEnergy() const {
-        float kineticEnergy = 0.5f * mass * (vx * vx + vy * vy + vz * vz);
+        float kineticEnergy = 0.5f * mass * (vx*vx + vy*vy + vz*vz); // 0.5 * m * v^2
         float potentialEnergy = mass * 9.81f * y; // om y är höjden från marken annars får en variabel eller konstant läggas till för marknivån 
         return kineticEnergy + potentialEnergy;
     };
@@ -78,7 +69,7 @@ public:
         damage = 0;
         float dontDestroyTheWorldVariableForDamageCalculationIfSomethingSomehowGainsTooMuchEnergyAndWeDontKnowHowItGotThatMuchEnergyBecauseThatIsEasierThanFindingTheProblem = 500.0f; // Variabel för att undvika extrema skador
 
-        Energy = self.getTotalEnergy(); // Använder total energi som en proxy för skada
+        Energy = getTotalEnergy(); // Använder total energi som en proxy för skada
         if (Energy > 1000) {
             Energy = dontDestroyTheWorldVariableForDamageCalculationIfSomethingSomehowGainsTooMuchEnergyAndWeDontKnowHowItGotThatMuchEnergyBecauseThatIsEasierThanFindingTheProblem; // Begränsar skadan för att undvika extrema värden
         };
@@ -88,22 +79,46 @@ public:
         return damage;
     };
 
+    void destroySelf() {
+        // Placeholder för att markera objektet som förstört
+        // I en riktig implementation skulle detta hantera borttagning från scenen eller liknande
+        return;
+    };
+
     void hitObject(int objectHardness) { // sakta ner ner objektet baserat på dess hårdhet
         int damage = getDamage();
         if (damage > objectHardness) {
-            
+            vx -= (damage - objectHardness)/3.0f;
+            vy -= (damage - objectHardness)/3.0f;
+            vz -= (damage - objectHardness)/3.0f;
+            // Ska också förstöra objektet om skadan överstiger dess hårdhet men det har mer med implemnetation att göra
         } else {
-            
-
+            objectHardness -= damage; // Minska objektets hårdhet
+            destroySelf(); // Förstör objektet om skadan överstiger dess hårdhet
     }
 
 private:
-    float radius; // Radius of the spherical object
     float x, y, z; // Position
     float vx, vy, vz; // Velocity
-    float ax, ay, vz; // Acceleration
+    float ax, ay, az; // Acceleration
     float mass; // Mass
     float bounce; // Coefficient of restitution (bounciness)
     float friction; // Coefficient of friction
+
+}; // Forward declaration
+
+class physicalSphericalObject : public physicalObject {
+
+public:
+    
+
+    physicalObject(float radius, float x, float y, float z, float mass, float bounce = 0.5f, float friction = 0.5f)
+        : radius(radius), x(x), y(y), z(z), vx(0), vy(0), vz(0), ax(0), ay(0), az(0), mass(mass), bounce(bounce), friction(friction) {}
+
+    //Get för alla variabler
+    float getRadius() const { return radius; }
+
+private:
+    float radius; // Radius of the sphere
     
 };
