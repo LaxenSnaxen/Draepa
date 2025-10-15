@@ -1,121 +1,5 @@
+/*
 #include "ProceduralTerrain.h"
-#include "DrawDebugHelpers.h"
-
-/*AProceduralTerrain::AProceduralTerrain()
-{
-    PrimaryActorTick.bCanEverTick = true;
-
-    // Configure noise generators
-    ElevationNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
-    ElevationNoise.SetFrequency(0.01f);
-
-    MoistureNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
-    MoistureNoise.SetFrequency(0.02f);
-
-    TemperatureNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
-    TemperatureNoise.SetFrequency(0.02f);
-}
-
-void AProceduralTerrain::BeginPlay()
-{
-    Super::BeginPlay();
-    GenerateTerrain();
-}
-
-void AProceduralTerrain::Tick(float DeltaTime)
-{
-    Super::Tick(DeltaTime);
-}
-
-void AProceduralTerrain::GenerateTerrain()
-{
-    for (int32 Y = 0; Y < TerrainHeight; Y++)
-    {
-        for (int32 X = 0; X < TerrainWidth; X++)
-        {
-            // Normalize coordinates to [-0.5, 0.5]
-            double Nx = static_cast<double>(X) / TerrainWidth - 0.5;
-            double Ny = static_cast<double>(Y) / TerrainHeight - 0.5;
-
-            // Elevation (multi-octave)
-            double E = ElevationNoise.GetNoise(Nx * 100, Ny * 100) * 0.5 + 0.5;
-            E += 0.5 * (ElevationNoise.GetNoise(Nx * 200, Ny * 200) * 0.5 + 0.5);
-            E += 0.25 * (ElevationNoise.GetNoise(Nx * 400, Ny * 400) * 0.5 + 0.5);
-            E /= (1 + 0.5 + 0.25);
-            E = FMath::Pow(E * FudgeFactor, Exponent);
-
-            // Core lock: keep consistent center
-            FVector2D Pos(X - TerrainWidth / 2, Y - TerrainHeight / 2);
-            if (FVector2D::Distance(Pos, CoreCenter) < CoreRadius)
-            {
-                E = 0.6f; // plateau in center
-            }
-
-            // Moisture & temperature
-            float Moisture = MoistureNoise.GetNoise(Nx * 80, Ny * 80) * 0.5f + 0.5f;
-            float Temperature = TemperatureNoise.GetNoise(Nx * 60, Ny * 60) * 0.5f + 0.5f;
-
-            // Classify biome
-            FString Biome = GetBiome(E, Moisture, Temperature);
-
-            // Debug visualization
-            FVector WorldPos = GetActorLocation() + FVector(X * 100, Y * 100, E * 500);
-            FColor Color = FColor::White;
-
-            if (Biome == "OCEAN") Color = FColor::Blue;                     // BLÅ
-            else if (Biome == "BEACH") Color = FColor::Yellow;              // GUL
-            else if (Biome == "SWAMP") Color = FColor(0, 100, 0);           // MÖRK GRÖN
-            else if (Biome == "PLAINS") Color = FColor::Green;              // LJUS GRÖN
-            else if (Biome == "FOREST") Color = FColor(34, 139, 34);        // MÖRK GRÖN
-            else if (Biome == "TAIGA") Color = FColor(0, 128, 128);         // TURKOS
-            else if (Biome == "MOUNTAIN") Color = FColor(139, 137, 137);    // GRÅ
-            else if (Biome == "TUNDRA") Color = FColor(198, 226, 255);      // LJUS BLÅ
-            else if (Biome == "GRUMS") Color = FColor::Red; // The deadliest biome
-
-            DrawDebugPoint(GetWorld(), WorldPos, 8.0f, Color, true);
-        }
-    }
-}
-
-FString AProceduralTerrain::GetBiome(float Elevation, float Moisture, float Temperature)
-{
-    // Ocean & coast
-    if (Elevation < WaterLevel) return "OCEAN";
-    if (Elevation > WaterLevel && Elevation < WaterLevel * 1.1f) return "BEACH";
-
-    // Wet lowlands
-    if (Moisture > 0.7f && Elevation < 0.3f) return "SWAMP";
-
-    // Grasslands / meadows
-    if (Elevation < 0.4f && Moisture > 0.4f) return "PLAINS";
-
-    // Forests
-    if (Elevation < 0.6f && Moisture > 0.5f && Temperature > 0.4f) return "FOREST";
-
-    // Taiga / boreal forest (colder, wetter mid-elevations)
-    if (Elevation < 0.7f && Moisture > 0.5f && Temperature <= 0.4f) return "TAIGA";
-
-    // Mountains
-    if (Elevation >= 0.7f && Elevation < 0.85f) return "MOUNTAIN";
-
-    // High cold plateau
-    if (Elevation >= 0.85f && Temperature < 0.5f) return "TUNDRA";
-
-    // The cursed biome of Grums (rare, easter egg condition)
-    if (FMath::FRand() < 0.001f) return "GRUMS";
-
-    // Default fallback
-    return "PLAINS";
-}
-*/
-
-#include "ProceduralTerrain.h"
-#include "DrawDebugHelpers.h"
-#include "Misc/FileHelper.h"
-#include "HAL/PlatformFilemanager.h"
-
-#include "ProceduralTerrain.h"
-#include "DrawDebugHelpers.h"
 #include "Misc/FileHelper.h"
 #include "HAL/PlatformFilemanager.h"
 
@@ -124,7 +8,7 @@ AProceduralTerrain::AProceduralTerrain()
     PrimaryActorTick.bCanEverTick = true;
 
     ElevationNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
-    ElevationNoise.SetFrequency(1.0f);
+    ElevationNoise.SetFrequency(Frequency);
 
     MoistureNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
     MoistureNoise.SetFrequency(0.002f);
@@ -148,8 +32,6 @@ void AProceduralTerrain::Tick(float DeltaTime)
 void AProceduralTerrain::UpdateLoadedChunks()
 {
     FVector PlayerPos = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
-
-    // Convert player pos to chunk coord
     int32 PlayerChunkX = FMath::FloorToInt(PlayerPos.X / ChunkSizeMeters);
     int32 PlayerChunkY = FMath::FloorToInt(PlayerPos.Y / ChunkSizeMeters);
 
@@ -158,159 +40,108 @@ void AProceduralTerrain::UpdateLoadedChunks()
         for (int32 x = 0; x < WorldSizeChunks; x++)
         {
             FVector2D ChunkCoord(x, y);
-            FVector ChunkCenter = FVector(
-                (x + 0.5f) * ChunkSizeMeters,
-                (y + 0.5f) * ChunkSizeMeters,
-                0
-            );
-
+            FVector ChunkCenter = FVector((x + 0.5f) * ChunkSizeMeters, (y + 0.5f) * ChunkSizeMeters, 0);
             float Dist = FVector::Dist2D(PlayerPos, ChunkCenter);
 
-            // Only load chunks within load distance (4x4 accessible, 5th is visual buffer)
-            if (Dist <= LoadDistance)
+            if (Dist <= LoadDistance && !LoadedChunks.Contains(ChunkCoord))
             {
-                if (!LoadedChunks.Contains(ChunkCoord))
+                TArray<uint8> Data;
+                if (!LoadChunkFromDisk(ChunkCoord, Data))
                 {
-                    LoadOrGenerateChunk(ChunkCoord);
-                    LoadedChunks.Add(ChunkCoord);
+                    GenerateChunk(ChunkCoord, Data);
+                    SaveChunkToDisk(ChunkCoord, Data);
                 }
+                BuildChunkMesh(ChunkCoord, Data);
+                LoadedChunks.Add(ChunkCoord);
             }
         }
     }
 }
 
-void AProceduralTerrain::LoadOrGenerateChunk(const FVector2D& ChunkCoord)
-{
-    TArray<uint8> Data;
-    if (LoadChunkFromDisk(ChunkCoord, Data))
-    {
-        const int NumPoints = PointsPerChunk;
-
-        for (int y = 0; y < NumPoints; y++)
-        {
-            for (int x = 0; x < NumPoints; x++)
-            {
-                int idx = y * NumPoints + x;
-                if (idx >= Data.Num()) continue;
-
-                // Elevation from saved height
-                float Elevation = static_cast<float>(Data[idx]) / 255.0f;
-
-                // Recompute world position
-                float wx = ChunkCoord.X * ChunkSizeMeters + (x / (float)NumPoints) * ChunkSizeMeters;
-                float wy = ChunkCoord.Y * ChunkSizeMeters + (y / (float)NumPoints) * ChunkSizeMeters;
-
-                // Recompute moisture & temperature (deterministic)
-                float Nx = (wx / (WorldSizeChunks * ChunkSizeMeters)) - 0.5f;
-                float Ny = (wy / (WorldSizeChunks * ChunkSizeMeters)) - 0.5f;
-                float Moisture = MoistureNoise.GetNoise(Nx * 80, Ny * 80) * 0.5f + 0.5f;
-                float Temperature = TemperatureNoise.GetNoise(Nx * 60, Ny * 60) * 0.5f + 0.5f;
-
-                FString Biome = GetBiome(Elevation, Moisture, Temperature);
-
-                FColor Color = FColor::White;
-                if (Biome == "OCEAN") Color = FColor::Blue;
-                else if (Biome == "BEACH") Color = FColor::Yellow;
-                else if (Biome == "SWAMP") Color = FColor(0, 100, 0);
-                else if (Biome == "PLAINS") Color = FColor::Green;
-                else if (Biome == "FOREST") Color = FColor(34, 139, 34);
-                else if (Biome == "TAIGA") Color = FColor(0, 128, 128);
-                else if (Biome == "MOUNTAIN") Color = FColor(139, 137, 137);
-                else if (Biome == "TUNDRA") Color = FColor(198, 226, 255);
-                else if (Biome == "GRUMS") Color = FColor::Red;
-
-                FVector WorldPos(wx, wy, Elevation * 1500.0f); // exaggerate vertical scale
-                DrawDebugPoint(GetWorld(), WorldPos, 8.0f, Color, true);
-            }
-        }
-    }
-    else
-    {
-        GenerateChunk(ChunkCoord);
-    }
-}
-
-
-void AProceduralTerrain::GenerateChunk(const FVector2D& ChunkCoord)
+void AProceduralTerrain::GenerateChunk(const FVector2D& ChunkCoord, TArray<uint8>& OutData)
 {
     const int NumPoints = PointsPerChunk;
-    TArray<uint8> Data;
-    Data.SetNum(NumPoints * NumPoints);
-
-    // Identify core chunk
-    FVector2D CoreChunk(WorldSizeChunks / 2, WorldSizeChunks / 2);
-    // float CoreRadius; // meters
+    OutData.SetNum(NumPoints * NumPoints);
 
     for (int y = 0; y < NumPoints; y++)
     {
         for (int x = 0; x < NumPoints; x++)
         {
-            float wx = ChunkCoord.X * ChunkSizeMeters + (x / (float)NumPoints) * ChunkSizeMeters;
-            float wy = ChunkCoord.Y * ChunkSizeMeters + (y / (float)NumPoints) * ChunkSizeMeters;
-
-            // Base coordinates normalized to [-0.5, 0.5]
+            float wx = ChunkCoord.X * ChunkSizeMeters + (x / (float)(NumPoints - 1)) * ChunkSizeMeters;
+            float wy = ChunkCoord.Y * ChunkSizeMeters + (y / (float)(NumPoints - 1)) * ChunkSizeMeters;
             float Nx = (wx / (WorldSizeChunks * ChunkSizeMeters)) - 0.5f;
             float Ny = (wy / (WorldSizeChunks * ChunkSizeMeters)) - 0.5f;
 
-            // Multi-octave elevation noise for more interesting terrain
             float E = ElevationNoise.GetNoise(Nx * 100, Ny * 100) * 0.5f + 0.5f;
             E += 0.5f * (ElevationNoise.GetNoise(Nx * 200, Ny * 200) * 0.5f + 0.5f);
             E += 0.25f * (ElevationNoise.GetNoise(Nx * 400, Ny * 400) * 0.5f + 0.5f);
-            E /= (1 + 0.5f + 0.25f);
-
-            // Apply fudge/exponent
+            E /= (1.0f + 0.5f + 0.25f);
             float Elevation = FMath::Pow(E * FudgeFactor, Exponent);
-            Elevation = FMath::Clamp(Elevation, 0.0f, 1.0f);
+            OutData[y * NumPoints + x] = (uint8)(FMath::Clamp(Elevation, 0.0f, 1.0f) * 255.0f);
+        }
+    }
+}
 
+void AProceduralTerrain::BuildChunkMesh(const FVector2D& ChunkCoord, const TArray<uint8>& HeightData)
+{
+    const int NumPoints = PointsPerChunk;
+    const float Step = ChunkSizeMeters / (float)(NumPoints - 1);
 
-            // Flatten core center if this is the core chunk
-            if (ChunkCoord == CoreChunk)
-            {
-                float ChunkCenterX = CoreChunk.X * ChunkSizeMeters + ChunkSizeMeters / 2.0f;
-                float ChunkCenterY = CoreChunk.Y * ChunkSizeMeters + ChunkSizeMeters / 2.0f;
-                float DistToCenter = FVector2D(wx - ChunkCenterX, wy - ChunkCenterY).Size();
+    FString Name = FString::Printf(TEXT("ChunkMesh_%d_%d"), (int)ChunkCoord.X, (int)ChunkCoord.Y);
+    UProceduralMeshComponent* Mesh = NewObject<UProceduralMeshComponent>(this, *Name);
+    Mesh->RegisterComponent();
+    Mesh->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+    ActiveChunkMeshes.Add({ChunkCoord, Mesh});
 
-                if (DistToCenter <= CoreRadius)
-                {
-                    Elevation = 0.6f;
-                }
-                else if (DistToCenter <= CoreRadius * 1.2f)
-                {
-                    float t = (DistToCenter - CoreRadius) / (CoreRadius * 0.2f);
-                    float NoiseVal = ElevationNoise.GetNoise(Nx, Ny) * 0.5f + 0.5f;
-                    Elevation = FMath::Lerp(0.6f, NoiseVal, t);
-                }
-            }
+    TArray<FVector> Vertices;
+    TArray<int32> Triangles;
+    TArray<FVector2D> UVs;
+    TArray<FLinearColor> Colors;
 
-            Elevation = FMath::Clamp(Elevation, 0.0f, 1.0f);
+    Vertices.Reserve(NumPoints * NumPoints);
 
-            // Save elevation as byte
-            Data[y * NumPoints + x] = (uint8)(Elevation * 255.0f);
+    for (int y = 0; y < NumPoints; y++)
+    {
+        for (int x = 0; x < NumPoints; x++)
+        {
+            float Elev = HeightData[y * NumPoints + x] / 255.0f;
+            float wx = ChunkCoord.X * ChunkSizeMeters + x * Step;
+            float wy = ChunkCoord.Y * ChunkSizeMeters + y * Step;
 
-            // Moisture & temperature for biome
+            // Sample biome noise again
+            float Nx = (wx / (WorldSizeChunks * ChunkSizeMeters)) - 0.5f;
+            float Ny = (wy / (WorldSizeChunks * ChunkSizeMeters)) - 0.5f;
             float Moisture = MoistureNoise.GetNoise(Nx * 80, Ny * 80) * 0.5f + 0.5f;
             float Temperature = TemperatureNoise.GetNoise(Nx * 60, Ny * 60) * 0.5f + 0.5f;
 
-            FString Biome = GetBiome(Elevation, Moisture, Temperature);
+            FString Biome = GetBiome(Elev, Moisture, Temperature);
+            FLinearColor Color = GetBiomeColor(Biome);
 
-            FColor Color = FColor::White;
-            if (Biome == "OCEAN") Color = FColor::Blue;
-            else if (Biome == "BEACH") Color = FColor::Yellow;
-            else if (Biome == "SWAMP") Color = FColor(0, 100, 0);
-            else if (Biome == "PLAINS") Color = FColor::Green;
-            else if (Biome == "FOREST") Color = FColor(34, 139, 34);
-            else if (Biome == "TAIGA") Color = FColor(0, 128, 128);
-            else if (Biome == "MOUNTAIN") Color = FColor(139, 137, 137);
-            else if (Biome == "TUNDRA") Color = FColor(198, 226, 255);
-            else if (Biome == "GRUMS") Color = FColor::Red;
-
-            FVector WorldPos(wx, wy, Elevation * 1500.0f); // exaggerate vertical scale
-
-            DrawDebugPoint(GetWorld(), WorldPos, 8.0f, Color, true);
+            Vertices.Add(FVector(wx, wy, Elev * HeightScale));
+            UVs.Add(FVector2D((float)x / (NumPoints - 1), (float)y / (NumPoints - 1)));
+            Colors.Add(Color);
         }
     }
 
-    SaveChunkToDisk(ChunkCoord, Data);
+    for (int y = 0; y < NumPoints - 1; y++)
+    {
+        for (int x = 0; x < NumPoints - 1; x++)
+        {
+            int i0 = y * NumPoints + x;
+            int i1 = y * NumPoints + x + 1;
+            int i2 = (y + 1) * NumPoints + x;
+            int i3 = (y + 1) * NumPoints + x + 1;
+
+            Triangles.Add(i0); Triangles.Add(i2); Triangles.Add(i1);
+            Triangles.Add(i1); Triangles.Add(i2); Triangles.Add(i3);
+        }
+    }
+
+    Mesh->CreateMeshSection_LinearColor(0, Vertices, Triangles, {}, UVs, Colors, {}, true);
+    Mesh->bUseComplexAsSimpleCollision = true;
+    Mesh->ContainsPhysicsTriMeshData(true);
+    Mesh->SetMobility(EComponentMobility::Static);
+    Mesh->SetMaterial(0, nullptr);
 }
 
 bool AProceduralTerrain::LoadChunkFromDisk(const FVector2D& ChunkCoord, TArray<uint8>& OutData)
@@ -328,39 +159,217 @@ void AProceduralTerrain::SaveChunkToDisk(const FVector2D& ChunkCoord, const TArr
 
 FString AProceduralTerrain::GetChunkFilename(const FVector2D& ChunkCoord) const
 {
-    return FPaths::ProjectDir() / ChunkSaveFolder /
-    FString::Printf(TEXT("chunk_%d_%d.bin"), (int)ChunkCoord.X, (int)ChunkCoord.Y);
+    return FPaths::ProjectDir() / ChunkSaveFolder / FString::Printf(TEXT("chunk_%d_%d.bin"), (int)ChunkCoord.X, (int)ChunkCoord.Y);
 }
 
-
-
+// === Biome logic ===
 FString AProceduralTerrain::GetBiome(float Elevation, float Moisture, float Temperature)
 {
-    // Ocean & coast
     if (Elevation < WaterLevel) return "OCEAN";
-    if (Elevation > WaterLevel && Elevation < WaterLevel * 1.1f) return "BEACH";
-
-    // Wet lowlands
+    if (Elevation < WaterLevel * 1.1f) return "BEACH";
     if (Moisture > 0.7f && Elevation < 0.3f) return "SWAMP";
-
-    // Grasslands / meadows
     if (Elevation < 0.4f && Moisture > 0.4f) return "PLAINS";
-
-    // Forests
     if (Elevation < 0.6f && Moisture > 0.5f && Temperature > 0.4f) return "FOREST";
-
-    // Taiga / boreal forest (colder, wetter mid-elevations)
     if (Elevation < 0.7f && Moisture > 0.5f && Temperature <= 0.4f) return "TAIGA";
-
-    // Mountains
     if (Elevation >= 0.7f && Elevation < 0.85f) return "MOUNTAIN";
-
-    // High cold plateau
     if (Elevation >= 0.85f && Temperature < 0.5f) return "TUNDRA";
-
-    // The cursed biome of Grums (rare, easter egg condition)
     if (FMath::FRand() < 0.001f) return "GRUMS";
+    return "PLAINS";
+}
 
-    // Default fallback
+FLinearColor AProceduralTerrain::GetBiomeColor(const FString& Biome)
+{
+    if (Biome == "OCEAN") return FLinearColor(0.0f, 0.2f, 1.0f);
+    if (Biome == "BEACH") return FLinearColor(1.0f, 1.0f, 0.5f);
+    if (Biome == "SWAMP") return FLinearColor(0.0f, 0.3f, 0.0f);
+    if (Biome == "PLAINS") return FLinearColor(0.2f, 0.8f, 0.2f);
+    if (Biome == "FOREST") return FLinearColor(0.0f, 0.5f, 0.0f);
+    if (Biome == "TAIGA") return FLinearColor(0.0f, 0.6f, 0.6f);
+    if (Biome == "MOUNTAIN") return FLinearColor(0.5f, 0.5f, 0.5f);
+    if (Biome == "TUNDRA") return FLinearColor(0.8f, 0.9f, 1.0f);
+    if (Biome == "GRUMS") return FLinearColor::Red;
+    return FLinearColor::White;
+}
+*/
+#include "ProceduralTerrain.h"
+#include "Misc/FileHelper.h"
+#include "HAL/PlatformFilemanager.h"
+#include "Kismet/GameplayStatics.h"
+
+AProceduralTerrain::AProceduralTerrain()
+{
+    PrimaryActorTick.bCanEverTick = true;
+
+    // Noise setup
+    ElevationNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
+    ElevationNoise.SetFrequency(Frequency);
+
+    MoistureNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
+    MoistureNoise.SetFrequency(MoistureFrequency);
+
+    TemperatureNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
+    TemperatureNoise.SetFrequency(TemperatureFrequency);
+}
+
+void AProceduralTerrain::BeginPlay()
+{
+    Super::BeginPlay();
+    UpdateLoadedChunks();
+}
+
+void AProceduralTerrain::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+    UpdateLoadedChunks();
+}
+
+void AProceduralTerrain::UpdateLoadedChunks()
+{
+    FVector PlayerPos = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+    int32 PlayerChunkX = FMath::FloorToInt(PlayerPos.X / ChunkSizeMeters);
+    int32 PlayerChunkY = FMath::FloorToInt(PlayerPos.Y / ChunkSizeMeters);
+
+    for (int32 y = 0; y < WorldSizeChunks; y++)
+    {
+        for (int32 x = 0; x < WorldSizeChunks; x++)
+        {
+            FVector2D ChunkCoord(x, y);
+            FVector ChunkCenter((x + 0.5f) * ChunkSizeMeters, (y + 0.5f) * ChunkSizeMeters, 0);
+
+            float Dist = FVector::Dist2D(PlayerPos, ChunkCenter);
+            if (Dist <= LoadDistance && !LoadedChunks.Contains(ChunkCoord))
+            {
+                TArray<uint8> Data;
+                GenerateChunk(ChunkCoord, Data);
+                BuildChunkMesh(ChunkCoord, Data);
+                LoadedChunks.Add(ChunkCoord);
+            }
+        }
+    }
+}
+
+void AProceduralTerrain::GenerateChunk(const FVector2D& ChunkCoord, TArray<uint8>& OutData)
+{
+    const int NumPoints = PointsPerChunk;
+    OutData.SetNum(NumPoints * NumPoints);
+
+    for (int y = 0; y < NumPoints; y++)
+    {
+        for (int x = 0; x < NumPoints; x++)
+        {
+            float wx = ChunkCoord.X * ChunkSizeMeters + (x / (float)(NumPoints - 1)) * ChunkSizeMeters;
+            float wy = ChunkCoord.Y * ChunkSizeMeters + (y / (float)(NumPoints - 1)) * ChunkSizeMeters;
+            float Nx = wx / (WorldSizeChunks * ChunkSizeMeters) - 0.5f;
+            float Ny = wy / (WorldSizeChunks * ChunkSizeMeters) - 0.5f;
+
+            float E = ElevationNoise.GetNoise(Nx * 100, Ny * 100) * 0.5f + 0.5f;
+            E += 0.5f * (ElevationNoise.GetNoise(Nx * 200, Ny * 200) * 0.5f + 0.5f);
+            E += 0.25f * (ElevationNoise.GetNoise(Nx * 400, Ny * 400) * 0.5f + 0.5f);
+            E /= (1.0f + 0.5f + 0.25f);
+
+            float Elevation = FMath::Pow(E * FudgeFactor, Exponent);
+            OutData[y * NumPoints + x] = (uint8)(FMath::Clamp(Elevation, 0.0f, 1.0f) * 255.0f);
+        }
+    }
+}
+
+void AProceduralTerrain::BuildChunkMesh(const FVector2D& ChunkCoord, const TArray<uint8>& HeightData)
+{
+    const int NumPoints = PointsPerChunk;
+    const float Step = ChunkSizeMeters / (float)(NumPoints - 1);
+
+    FString MeshName = FString::Printf(TEXT("ChunkMesh_%d_%d"), (int)ChunkCoord.X, (int)ChunkCoord.Y);
+    UProceduralMeshComponent* Mesh = NewObject<UProceduralMeshComponent>(this, *MeshName);
+    Mesh->RegisterComponent();
+    Mesh->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+    ActiveChunkMeshes.Add({ChunkCoord, Mesh});
+
+    TArray<FVector> Vertices;
+    TArray<int32> Triangles;
+    TArray<FVector2D> UVs;
+    TArray<FLinearColor> Colors;
+
+    Vertices.Reserve(NumPoints * NumPoints);
+
+    for (int y = 0; y < NumPoints; y++)
+    {
+        for (int x = 0; x < NumPoints; x++)
+        {
+            float Elev = HeightData[y * NumPoints + x] / 255.0f;
+            float wx = ChunkCoord.X * ChunkSizeMeters + x * Step;
+            float wy = ChunkCoord.Y * ChunkSizeMeters + y * Step;
+
+            float Nx = wx / (WorldSizeChunks * ChunkSizeMeters) - 0.5f;
+            float Ny = wy / (WorldSizeChunks * ChunkSizeMeters) - 0.5f;
+            float Moisture = MoistureNoise.GetNoise(Nx * 80, Ny * 80) * 0.5f + 0.5f;
+            float Temperature = TemperatureNoise.GetNoise(Nx * 60, Ny * 60) * 0.5f + 0.5f;
+
+            FString Biome = GetBiome(Elev, Moisture, Temperature);
+
+            // Assign smooth biome weights (so texture transitions are soft)
+            FLinearColor BiomeWeights(0, 0, 0, 0);
+            if (Biome == "OCEAN" || Biome == "BEACH")
+            {
+                BiomeWeights.R = 1.0f; // Sand
+            }
+            else if (Biome == "PLAINS" || Biome == "FOREST")
+            {
+                BiomeWeights.G = 1.0f; // Grass
+            }
+            else if (Biome == "MOUNTAIN" || Biome == "TAIGA")
+            {
+                BiomeWeights.B = 1.0f; // Rock
+            }
+            else if (Biome == "TUNDRA")
+            {
+                BiomeWeights.A = 1.0f; // Snow
+            }
+
+            Vertices.Add(FVector(wx, wy, Elev * HeightScale));
+            UVs.Add(FVector2D((float)x / (NumPoints - 1), (float)y / (NumPoints - 1)));
+            Colors.Add(BiomeWeights);
+        }
+    }
+
+    for (int y = 0; y < NumPoints - 1; y++)
+    {
+        for (int x = 0; x < NumPoints - 1; x++)
+        {
+            int i0 = y * NumPoints + x;
+            int i1 = y * NumPoints + x + 1;
+            int i2 = (y + 1) * NumPoints + x;
+            int i3 = (y + 1) * NumPoints + x + 1;
+
+            // Correct winding order (clockwise when viewed from above)
+            Triangles.Add(i0);
+            Triangles.Add(i2);
+            Triangles.Add(i1);
+
+            Triangles.Add(i1);
+            Triangles.Add(i2);
+            Triangles.Add(i3);
+        }
+    }
+
+    Mesh->CreateMeshSection_LinearColor(0, Vertices, Triangles, {}, UVs, Colors, {}, true);
+
+    // Apply Quixel material
+    if (TerrainMaterial)
+    {
+        Mesh->SetMaterial(0, TerrainMaterial);
+    }
+
+    Mesh->bUseComplexAsSimpleCollision = true;
+    Mesh->SetMobility(EComponentMobility::Static);
+}
+
+FString AProceduralTerrain::GetBiome(float Elevation, float Moisture, float Temperature) const
+{
+    if (Elevation < WaterLevel * 0.9f) return "OCEAN";
+    if (Elevation < WaterLevel * 1.05f) return "BEACH";
+    if (Elevation < 0.5f && Moisture > 0.5f) return "PLAINS";
+    if (Elevation < 0.7f && Moisture > 0.4f && Temperature > 0.4f) return "FOREST";
+    if (Elevation < 0.8f) return "MOUNTAIN";
+    if (Elevation >= 0.8f && Temperature < 0.5f) return "TUNDRA";
     return "PLAINS";
 }
