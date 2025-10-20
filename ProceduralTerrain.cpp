@@ -1,4 +1,4 @@
-/*
+/* DEBUG VERSIONEN
 #include "ProceduralTerrain.h"
 #include "Misc/FileHelper.h"
 #include "HAL/PlatformFilemanager.h"
@@ -191,6 +191,7 @@ FLinearColor AProceduralTerrain::GetBiomeColor(const FString& Biome)
     return FLinearColor::White;
 }
 */
+/* VER 1
 #include "ProceduralTerrain.h"
 #include "Misc/FileHelper.h"
 #include "HAL/PlatformFilemanager.h"
@@ -365,11 +366,211 @@ void AProceduralTerrain::BuildChunkMesh(const FVector2D& ChunkCoord, const TArra
 
 FString AProceduralTerrain::GetBiome(float Elevation, float Moisture, float Temperature) const
 {
-    if (Elevation < WaterLevel * 0.9f) return "OCEAN";
-    if (Elevation < WaterLevel * 1.05f) return "BEACH";
-    if (Elevation < 0.5f && Moisture > 0.5f) return "PLAINS";
-    if (Elevation < 0.7f && Moisture > 0.4f && Temperature > 0.4f) return "FOREST";
-    if (Elevation < 0.8f) return "MOUNTAIN";
-    if (Elevation >= 0.8f && Temperature < 0.5f) return "TUNDRA";
+    if (Elevation < WaterLevel) return "OCEAN";
+    if (Elevation < WaterLevel * 1.1f) return "BEACH";
+    if (Moisture > 0.7f && Elevation < 0.3f) return "SWAMP";
+    if (Elevation < 0.4f && Moisture > 0.4f) return "PLAINS";
+    if (Elevation < 0.6f && Moisture > 0.5f && Temperature > 0.4f) return "FOREST";
+    if (Elevation < 0.7f && Moisture > 0.5f && Temperature <= 0.4f) return "TAIGA";
+    if (Elevation >= 0.7f && Elevation < 0.85f) return "MOUNTAIN";
+    if (Elevation >= 0.85f && Temperature < 0.5f) return "TUNDRA";
+    if (FMath::FRand() < 0.001f) return "GRUMS";
     return "PLAINS";
+}
+*/
+/* VER 2*/  
+#include "ProceduralTerrain.h"
+#include "Misc/FileHelper.h"
+#include "HAL/PlatformFilemanager.h"
+#include "Kismet/GameplayStatics.h"
+#include "Engine/World.h"
+
+static const FString ChunkSaveFolder = TEXT("Saved/Chunks");
+
+AProceduralTerrain::AProceduralTerrain()
+{
+    PrimaryActorTick.bCanEverTick = true;
+
+    // Noise setup
+    ElevationNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
+    ElevationNoise.SetFrequency(Frequency);
+
+    MoistureNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
+    MoistureNoise.SetFrequency(MoistureFrequency);
+
+    TemperatureNoise.SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
+    TemperatureNoise.SetFrequency(TemperatureFrequency);
+}
+
+void AProceduralTerrain::BeginPlay()
+{
+    Super::BeginPlay();
+    UpdateLoadedChunks();
+}
+
+void AProceduralTerrain::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+    UpdateLoadedChunks();
+}
+
+void AProceduralTerrain::UpdateLoadedChunks()
+{
+    APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+    if (!PlayerPawn) return;
+
+    FVector PlayerPos = PlayerPawn->GetActorLocation();
+
+    // Determine which chunks should be loaded
+    TSet<FVector2D> DesiredChunks;
+    int32 CenterX = FMath::FloorToInt(PlayerPos.X / ChunkSizeMeters);
+    int32 CenterY = FMath::FloorToInt(PlayerPos.Y / ChunkSizeMeters);
+
+    int32 HalfWorld = WorldSizeChunks / 2;
+
+    for (int y = -HalfWorld; y <= HalfWorld; y++)
+    {
+        for (int x = -HalfWorld; x <= HalfWorld; x++)
+        {
+            FVector2D ChunkCoord(CenterX + x, CenterY + y);
+
+            FVector ChunkCenter(
+                (ChunkCoord.X + 0.5f) * ChunkSizeMeters,
+                (ChunkCoord.Y + 0.5f) * ChunkSizeMeters,
+                0.0f
+            );
+
+            float Dist = FVector::Dist2D(PlayerPos, ChunkCenter);
+            if (Dist <= LoadDistance)
+            {
+                DesiredChunks.Add(ChunkCoord);
+                if (!LoadedChunks.Contains(ChunkCoord))
+                {
+                    TArray<uint8> Data;
+                    if (!LoadChunkFromDisk(ChunkCoord, Data))
+                    {
+                        GenerateChunk(ChunkCoord, Data);
+                        SaveChunkToDisk(ChunkCoord, Data);
+                    }
+                    BuildChunkMesh(ChunkCoord, Data);
+                    LoadedChunks.Add(ChunkCoord);
+                }
+            }
+        }
+    }
+
+    // === Unload chunks that are no longer needed ===
+    for (int32 i = ActiveChunkMeshes.Num() - 1; i >= 0; --i)
+    {
+        FChunkMesh& Chunk = ActiveChunkMeshes[i];
+        if (!DesiredChunks.Contains(Chunk.ChunkCoord))
+        {
+            if (Chunk.Mesh)
+            {
+                Chunk.Mesh->DestroyComponent();
+            }
+            LoadedChunks.Remove(Chunk.ChunkCoord);
+            ActiveChunkMeshes.RemoveAt(i);
+        }
+    }
+}
+
+void AProceduralTerrain::GenerateChunk(const FVector2D& ChunkCoord, TArray<uint8>& OutData)
+{
+    const int NumPoints = PointsPerChunk;
+    OutData.SetNum(NumPoints * NumPoints);
+
+    for (int y = 0; y < NumPoints; y++)
+    {
+        for (int x = 0; x < NumPoints; x++)
+        {
+            float wx = ChunkCoord.X * ChunkSizeMeters + (x / (float)(NumPoints - 1)) * ChunkSizeMeters;
+            float wy = ChunkCoord.Y * ChunkSizeMeters + (y / (float)(NumPoints - 1)) * ChunkSizeMeters;
+            float Nx = wx / (WorldSizeChunks * ChunkSizeMeters) - 0.5f;
+            float Ny = wy / (WorldSizeChunks * ChunkSizeMeters) - 0.5f;
+
+            float E = ElevationNoise.GetNoise(Nx * 100, Ny * 100) * 0.5f + 0.5f;
+            E += 0.5f * (ElevationNoise.GetNoise(Nx * 200, Ny * 200) * 0.5f + 0.5f);
+            E += 0.25f * (ElevationNoise.GetNoise(Nx * 400, Ny * 400) * 0.5f + 0.5f);
+            E /= (1.0f + 0.5f + 0.25f);
+
+            float Elevation = FMath::Pow(E * FudgeFactor, Exponent);
+            OutData[y * NumPoints + x] = (uint8)(FMath::Clamp(Elevation, 0.0f, 1.0f) * 255.0f);
+        }
+    }
+}
+
+void AProceduralTerrain::BuildChunkMesh(const FVector2D& ChunkCoord, const TArray<uint8>& HeightData)
+{
+    const int NumPoints = PointsPerChunk;
+    const float Step = ChunkSizeMeters / (float)(NumPoints - 1);
+
+    FString MeshName = FString::Printf(TEXT("ChunkMesh_%d_%d"), (int32)ChunkCoord.X, (int32)ChunkCoord.Y);
+    UProceduralMeshComponent* Mesh = NewObject<UProceduralMeshComponent>(this, *MeshName);
+    Mesh->RegisterComponent();
+    Mesh->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+    ActiveChunkMeshes.Add({ChunkCoord, Mesh});
+
+    TArray<FVector> Vertices;
+    TArray<int32> Triangles;
+    TArray<FVector2D> UVs;
+    TArray<FLinearColor> Colors;
+
+    Vertices.Reserve(NumPoints * NumPoints);
+
+    for (int y = 0; y < NumPoints; y++)
+    {
+        for (int x = 0; x < NumPoints; x++)
+        {
+            float Elev = HeightData[y * NumPoints + x] / 255.0f;
+            float wx = ChunkCoord.X * ChunkSizeMeters + x * Step;
+            float wy = ChunkCoord.Y * ChunkSizeMeters + y * Step;
+
+            Vertices.Add(FVector(wx, wy, Elev * HeightScale));
+            UVs.Add(FVector2D((float)x / (NumPoints - 1), (float)y / (NumPoints - 1)));
+            Colors.Add(FLinearColor(Elev, Elev, Elev, 1.0f)); // debug grayscale
+        }
+    }
+
+    for (int y = 0; y < NumPoints - 1; y++)
+    {
+        for (int x = 0; x < NumPoints - 1; x++)
+        {
+            int i0 = y * NumPoints + x;
+            int i1 = y * NumPoints + x + 1;
+            int i2 = (y + 1) * NumPoints + x;
+            int i3 = (y + 1) * NumPoints + x + 1;
+
+            Triangles.Add(i0);
+            Triangles.Add(i2);
+            Triangles.Add(i1);
+
+            Triangles.Add(i1);
+            Triangles.Add(i2);
+            Triangles.Add(i3);
+        }
+    }
+
+    Mesh->CreateMeshSection_LinearColor(0, Vertices, Triangles, {}, UVs, Colors, {}, true);
+    Mesh->bUseComplexAsSimpleCollision = true;
+    Mesh->SetMobility(EComponentMobility::Static);
+
+    if (TerrainMaterial)
+    {
+        Mesh->SetMaterial(0, TerrainMaterial);
+    }
+}
+
+bool AProceduralTerrain::LoadChunkFromDisk(const FVector2D& ChunkCoord, TArray<uint8>& OutData)
+{
+    FString FilePath = FPaths::ProjectSavedDir() / ChunkSaveFolder / FString::Printf(TEXT("chunk_%d_%d.bin"), (int32)ChunkCoord.X, (int32)ChunkCoord.Y);
+    return FFileHelper::LoadFileToArray(OutData, *FilePath);
+}
+
+void AProceduralTerrain::SaveChunkToDisk(const FVector2D& ChunkCoord, const TArray<uint8>& Data)
+{
+    FString Directory = FPaths::ProjectSavedDir() / ChunkSaveFolder;
+    IFileManager::Get().MakeDirectory(*Directory, true);
+    FString FilePath = Directory / FString::Printf(TEXT("chunk_%d_%d.bin"), (int32)ChunkCoord.X, (int32)ChunkCoord.Y);
+    FFileHelper::SaveArrayToFile(Data, *FilePath);
 }

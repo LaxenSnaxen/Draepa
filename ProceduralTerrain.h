@@ -1,4 +1,5 @@
 /*
+DEBUG VERSIONEN
 #pragma once
 
 #include "CoreMinimal.h"
@@ -85,7 +86,7 @@ private:
     void SaveChunkToDisk(const FVector2D& ChunkCoord, const TArray<uint8>& Data);
 };
 */
-
+/* VER 1 */
 #pragma once
 
 #include "CoreMinimal.h"
@@ -164,6 +165,8 @@ private:
     void LoadOrGenerateChunk(const FVector2D& ChunkCoord);
     void GenerateChunk(const FVector2D& ChunkCoord, TArray<uint8>& OutData);
     void BuildChunkMesh(const FVector2D& ChunkCoord, const TArray<uint8>& HeightData);
+    bool LoadChunkFromDisk(const FVector2D& ChunkCoord, TArray<uint8>& OutData);
+    void SaveChunkToDisk(const FVector2D& ChunkCoord, const TArray<uint8>& Data);
 
     FString GetBiome(float Elevation, float Moisture, float Temperature) const;
 };
